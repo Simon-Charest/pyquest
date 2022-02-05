@@ -1,0 +1,501 @@
+[
+	{
+		"lv": 1,
+		"xp": 0,
+		"str": 6,
+		"agi": 6,
+		"hp": 15,
+		"mp": 5,
+		"spells": null
+	},
+	{
+		"lv": 2,
+		"xp": 7,
+		"str": 7,
+		"agi": 6,
+		"hp": 22,
+		"mp": 5,
+		"spells": null
+	},
+	{
+		"lv": 3,
+		"xp": 23,
+		"str": 9,
+		"agi": 8,
+		"hp": 24,
+		"mp": 5,
+		"spells": [
+			"Heal"
+		]
+	},
+	{
+		"lv": 4,
+		"xp": 47,
+		"str": 9,
+		"agi": 10,
+		"hp": 31,
+		"mp": 16,
+		"spells": [
+			"Heal",
+			"Hurt"
+		]
+	},
+	{
+		"lv": 5,
+		"xp": 110,
+		"str": 14,
+		"agi": 12,
+		"hp": 35,
+		"mp": 20,
+		"spells": [
+			"Heal",
+			"Hurt"
+		]
+	},
+	{
+		"lv": 6,
+		"xp": 220,
+		"str": 18,
+		"agi": 12,
+		"hp": 38,
+		"mp": 24,
+		"spells": [
+			"Heal",
+			"Hurt"
+		]
+	},
+	{
+		"lv": 7,
+		"xp": 450,
+		"str": 20,
+		"agi": 19,
+		"hp": 40,
+		"mp": 26,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep"
+		]
+	},
+	{
+		"lv": 8,
+		"xp": 800,
+		"str": 24,
+		"agi": 22,
+		"hp": 46,
+		"mp": 29,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep"
+		]
+	},
+	{
+		"lv": 9,
+		"xp": 1300,
+		"str": 32,
+		"agi": 24,
+		"hp": 50,
+		"mp": 36,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant"
+		]
+	},
+	{
+		"lv": 10,
+		"xp": 2000,
+		"str": 37,
+		"agi": 33,
+		"hp": 54,
+		"mp": 40,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell"
+		]
+	},
+	{
+		"lv": 11,
+		"xp": 2900,
+		"str": 42,
+		"agi": 37,
+		"hp": 62,
+		"mp": 50,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell"
+		]
+	},
+	{
+		"lv": 12,
+		"xp": 4000,
+		"str": 50,
+		"agi": 42,
+		"hp": 63,
+		"mp": 58,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside"
+		]
+	},
+	{
+		"lv": 13,
+		"xp": 5500,
+		"str": 54,
+		"agi": 50,
+		"hp": 70,
+		"mp": 64,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return"
+		]
+	},
+	{
+		"lv": 14,
+		"xp": 7500,
+		"str": 62,
+		"agi": 57,
+		"hp": 78,
+		"mp": 70,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return"
+		]
+	},
+	{
+		"lv": 15,
+		"xp": 10000,
+		"str": 70,
+		"agi": 66,
+		"hp": 86,
+		"mp": 72,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel"
+		]
+	},
+	{
+		"lv": 16,
+		"xp": 13000,
+		"str": 74,
+		"agi": 72,
+		"hp": 92,
+		"mp": 95,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel"
+		]
+	},
+	{
+		"lv": 17,
+		"xp": 17000,
+		"str": 74,
+		"agi": 80,
+		"hp": 100,
+		"mp": 100,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore"
+		]
+	},
+	{
+		"lv": 18,
+		"xp": 21000,
+		"str": 87,
+		"agi": 86,
+		"hp": 115,
+		"mp": 108,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore"
+		]
+	},
+	{
+		"lv": 19,
+		"xp": 25000,
+		"str": 89,
+		"agi": 88,
+		"hp": 130,
+		"mp": 115,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 20,
+		"xp": 29000,
+		"str": 94,
+		"agi": 90,
+		"hp": 138,
+		"mp": 128,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 21,
+		"xp": 33000,
+		"str": 97,
+		"agi": 92,
+		"hp": 149,
+		"mp": 135,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 22,
+		"xp": 37000,
+		"str": 99,
+		"agi": 92,
+		"hp": 158,
+		"mp": 146,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 23,
+		"xp": 41000,
+		"str": 101,
+		"agi": 96,
+		"hp": 165,
+		"mp": 153,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 24,
+		"xp": 45000,
+		"str": 105,
+		"agi": 100,
+		"hp": 170,
+		"mp": 161,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 25,
+		"xp": 49000,
+		"str": 115,
+		"agi": 102,
+		"hp": 174,
+		"mp": 161,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 26,
+		"xp": 53000,
+		"str": 119,
+		"agi": 107,
+		"hp": 180,
+		"mp": 168,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 27,
+		"xp": 57000,
+		"str": 127,
+		"agi": 109,
+		"hp": 189,
+		"mp": 175,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 28,
+		"xp": 61000,
+		"str": 132,
+		"agi": 117,
+		"hp": 195,
+		"mp": 180,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 29,
+		"xp": 65000,
+		"str": 137,
+		"agi": 122,
+		"hp": 200,
+		"mp": 190,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	},
+	{
+		"lv": 30,
+		"xp": 65535,
+		"str": 142,
+		"agi": 132,
+		"hp": 210,
+		"mp": 200,
+		"spells": [
+			"Heal",
+			"Hurt",
+			"Sleep",
+			"Radiant",
+			"Stopspell",
+			"Outside",
+			"Return",
+			"Repel",
+			"Healmore",
+			"Hurtmore"
+		]
+	}
+]

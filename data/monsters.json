@@ -1,0 +1,297 @@
+[
+  {
+    "name": "Slime",
+    "hp": 3,
+    "xp": 1,
+    "gp": 1,
+    "img": "resources/monsters/slime.gif"
+  },
+  {
+    "name": "Red Slime",
+    "hp": 4,
+    "xp": 1,
+    "gp": 2,
+    "img": "resources/monsters/red_slime.gif"
+  },
+  {
+    "name": "Metal Slime",
+    "hp": 4,
+    "xp": 115,
+    "gp": 6,
+    "spells": ["Hurt"],
+    "img": "resources/monsters/metal_slime.gif"
+  },
+  {
+    "name": "Drakee",
+    "hp": 6,
+    "xp": 2,
+    "gp": 3,
+    "img": "resources/monsters/drakee.gif"
+  },
+  {
+    "name": "Magidrakee",
+    "hp": 15,
+    "xp": 5,
+    "gp": 12,
+    "spells": ["Hurt"],
+    "img": "resources/monsters/magidrakee.gif"
+  },
+  {
+    "name": "Drakeema",
+    "hp": 20,
+    "xp": 11,
+    "gp": 20,
+    "spells": ["Heal"],
+    "img": "resources/monsters/drakeema.gif"
+  },
+  {
+    "name": "Ghost",
+    "hp": 7,
+    "xp": 3,
+    "gp": 5,
+    "img": "resources/monsters/ghost.gif"
+  },
+  {
+    "name": "Poltergeist",
+    "hp": 23,
+    "xp": 8,
+    "gp": 18,
+    "img": "resources/monsters/poltergeist.gif"
+  },
+  {
+    "name": "Specter",
+    "hp": 36,
+    "xp": 18,
+    "gp": 70,
+    "img": "resources/monsters/specter.gif"
+  },
+  {
+    "name": "Magician",
+    "hp": 13,
+    "xp": 4,
+    "gp": 12,
+    "img": "resources/monsters/magician.gif"
+  },
+  {
+    "name": "Warlock",
+    "hp": 30,
+    "xp": 13,
+    "gp": 35,
+    "spells": ["Hurt", "Sleep"],
+    "img": "resources/monsters/warlock.gif"
+  },
+  {
+    "name": "Wizard",
+    "hp": 65,
+    "xp": 50,
+    "gp": 165,
+    "spells": ["Hurtmore"],
+    "img": "resources/monsters/wizard.gif"
+  },
+  {
+    "name": "Scorpion",
+    "hp": 20,
+    "xp": 6,
+    "gp": 16,
+    "img": "resources/monsters/scorpion.gif"
+  },
+  {
+    "name": "Metal Scorpion",
+    "hp": 22,
+    "xp": 14,
+    "gp": 40,
+    "img": "resources/monsters/metal_scorpion.gif"
+  },
+  {
+    "name": "Rogue Scorpion",
+    "hp": 50,
+    "xp": 37,
+    "gp": 150,
+    "img": "resources/monsters/rogue_scorpion.gif"
+  },
+  {
+    "name": "Druin",
+    "hp": 22,
+    "xp": 7,
+    "gp": 16,
+    "img": "resources/monsters/druin.gif"
+  },
+  {
+    "name": "Druinlord",
+    "hp": 35,
+    "xp": 20,
+    "gp": 85,
+    "img": "resources/monsters/druinlord.gif"
+  },
+  {
+    "name": "Droll",
+    "hp": 25,
+    "xp": 10,
+    "gp": 25,
+    "img": "resources/monsters/droll.gif"
+  },
+  {
+    "name": "Drollmagi",
+    "hp": 38,
+    "xp": 22,
+    "gp": 90,
+    "img": "resources/monsters/drollmagi.gif"
+  },
+  {
+    "name": "Skeleton",
+    "hp": 30,
+    "xp": 11,
+    "gp": 30,
+    "img": "resources/monsters/skeleton.gif"
+  },
+  {
+    "name": "Wraith",
+    "hp": 36,
+    "xp": 17,
+    "gp": 60,
+    "spells": ["Heal"],
+    "img": "resources/monsters/wraith.gif"
+  },
+  {
+    "name": "Wraith Knight",
+    "hp": 46,
+    "xp": 28,
+    "gp": 120,
+    "spells": ["Heal"],
+    "img": "resources/monsters/wraith_knight.gif"
+  },
+  {
+    "name": "Demon Knight",
+    "hp": 50,
+    "xp": 37,
+    "gp": 150,
+    "img": "resources/monsters/demon_knight.gif"
+  },
+  {
+    "name": "Wolf",
+    "hp": 34,
+    "xp": 16,
+    "gp": 50,
+    "img": "resources/monsters/wolf.gif"
+  },
+  {
+    "name": "Wolflord",
+    "hp": 38,
+    "xp": 20,
+    "gp": 80,
+    "spells": ["Stopspell"],
+    "img": "resources/monsters/wolflord.gif"
+  },
+  {
+    "name": "Werewolf",
+    "hp": 60,
+    "xp": 40,
+    "gp": 155,
+    "img": "resources/monsters/werewolf.gif"
+  },
+  {
+    "name": "Goldman",
+    "hp": 50,
+    "xp": 6,
+    "gp": 200,
+    "img": "resources/monsters/goldman.gif"
+  },
+  {
+    "name": "Golem",
+    "hp": 70,
+    "xp": 5,
+    "gp": 10,
+    "img": "resources/monsters/golem.gif"
+  },
+  {
+    "name": "Stoneman",
+    "hp": 160,
+    "xp": 65,
+    "gp": 140,
+    "img": "resources/monsters/stoneman.gif"
+  },
+  {
+    "name": "Wyvern",
+    "hp": 42,
+    "xp": 24,
+    "gp": 100,
+    "img": "resources/monsters/wyvern.gif"
+  },
+  {
+    "name": "Magiwyvern",
+    "hp": 58,
+    "xp": 34,
+    "gp": 140,
+    "spells": ["Sleep"],
+    "img": "resources/monsters/magiwyvern.gif"
+  },
+  {
+    "name": "Starwyvern",
+    "hp": 65,
+    "xp": 43,
+    "gp": 160,
+    "spells": ["Healmore"],
+    "img": "resources/monsters/starwyvern.gif"
+  },
+  {
+    "name": "Knight",
+    "hp": 55,
+    "xp": 33,
+    "gp": 130,
+    "spells": ["Stopspell"],
+    "img": "resources/monsters/knight.gif"
+  },
+  {
+    "name": "Axe Knight",
+    "hp": 70,
+    "xp": 54,
+    "gp": 165,
+    "spells": ["Sleep"],
+    "img": "resources/monsters/axe_knight.gif"
+  },
+  {
+    "name": "Armored Knight",
+    "hp": 90,
+    "xp": 70,
+    "gp": 140,
+    "spells": ["Healmore", "Hurtmore"],
+    "img": "resources/monsters/armored_knight.gif"
+  },
+  {
+    "name": "Green Dragon",
+    "hp": 65,
+    "xp": 45,
+    "gp": 160,
+    "img": "resources/monsters/green_dragon.gif"
+  },
+  {
+    "name": "Blue Dragon",
+    "hp": 70,
+    "xp": 60,
+    "gp": 150,
+    "img": "resources/monsters/blue_dragon.gif"
+  },
+  {
+    "name": "Red Dragon",
+    "hp": 100,
+    "xp": 100,
+    "gp": 140,
+    "spells": ["Sleep"],
+    "img": "resources/monsters/red_dragon.gif"
+  },
+  {
+    "name": "Dragon Lord I",
+    "hp": 100,
+    "xp": 0,
+    "gp": 0,
+    "spells": ["Hurtmore", "Stopspell"],
+    "img": "resources/monsters/dragon_lord_1.gif"
+  },
+  {
+    "name": "Dragon Lord II",
+    "hp": 130,
+    "xp": 0,
+    "gp": 0,
+    "img": "resources/monsters/dragon_lord_2.gif"
+  }
+]

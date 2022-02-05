@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Leather Shield",
+        "atk": 4,
+        "gp": 90,
+        "description": "Inexpensive, it is still a good buy early on in the game."
+    },
+    {
+        "name": "Iron Shield",
+        "atk": 10,
+        "gp": 800,
+        "description": "This shield will serve you well during most of your quest."
+    },
+    {
+        "name": "Silver Shield",
+        "atk": 20,
+        "gp": 14800,
+        "description": "Worth a King's ransom, the Silver Shield is worth every piece of gold."
+    }
+]

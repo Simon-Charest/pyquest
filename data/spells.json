@@ -1,0 +1,62 @@
+[
+	{
+		"name": "Heal",
+		"mp": 4,
+		"target": "hero",
+		"effect": "Your first spell is one of the most useful. If your HP is low, chant the Heal Spell to raise your HP by 10~17 points."
+	},
+	{
+		"name": "Hurt",
+		"mp": 2,
+		"target": "enemy",
+		"desc": "Hurl magic fire balls at the enemy with Hurt. You can go far with this spell, damaging enemies for 8~12 HP. "
+	},
+	{
+		"name": "Sleep",
+		"mp": 2,
+		"target": "enemy",
+		"effect": "Sleep is used during a battle to put the enemy to sleep. It doesn't always work. "
+	},
+	{
+		"name": "Radiant",
+		"mp": 3,
+		"target": "hero",
+		"effect": "Did you forget to bring a torch into the cave? If you have Radiant, it doesn't matter."
+	},
+	{
+		"name": "Stopspell",
+		"mp": 2,
+		"target": "enemy",
+		"effect": "When you encounter an enemy who uses magic, cast this spell to protect yourself. Very few monsters resist this spell!"
+	},
+	{
+		"name": "Outside",
+		"mp": 6,
+		"target": "hero",
+		"desc": "Deep in the underground caves and dungeons lurk terrible creatures. Escape from these places by chanting Outside."
+	},
+	{
+		"name": "Return",
+		"mp": 8,
+		"target": "hero",
+		"effect": "Return whisks you back to Tantegel Castle from anywhere in the overworld of Alefgard."
+	},
+	{
+		"name": "Repel",
+		"mp": 2,
+		"target": "hero",
+		"effect": "Like sprinkling Fairy Water, Repel keeps monsters at a healthy distance when you are in the countryside. The effect lasts for 127 steps."
+	},
+	{
+		"name": "Healmore",
+		"mp": 10,
+		"target": "hero",
+		"effect": "More potent than Heal, Healmore restores 85~100 HP each time you chant it."
+	},
+	{
+		"name": "Hurtmore",
+		"mp": 5,
+		"target": "enemy",
+		"effect": "More devastating than Hurt; with Hurtmore you can challenge even the strongest enemies. Deals 58~65 damage."
+	}
+]
