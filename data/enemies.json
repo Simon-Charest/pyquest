@@ -280,18 +280,18 @@
     "img": "resources/enemies/red_dragon.gif"
   },
   {
-    "name": "Dragon Lord I",
+    "name": "Dragonlord",
     "hp": 100,
     "xp": 0,
     "gp": 0,
     "spells": ["Hurtmore", "Stopspell"],
-    "img": "resources/enemies/dragon_lord_1.gif"
+    "img": "resources/enemies/dragonlord.gif"
   },
   {
-    "name": "Dragon Lord II",
+    "name": "King Dragon",
     "hp": 130,
     "xp": 0,
     "gp": 0,
-    "img": "resources/enemies/dragon_lord_2.gif"
+    "img": "resources/enemies/king_dragon.gif"
   }
 ]
