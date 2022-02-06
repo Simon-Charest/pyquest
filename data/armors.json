@@ -45,7 +45,7 @@
 		"name": "Erdrick's Armor",
 		"def": 28,
 		"gp": 0,
-		"found": ["Dragonlord's Castle"],
+		"found": ["Hauksness"],
 		"description": "You can't buy this ancient armor. You must find it. But the reward is well worth the effort - it restores a lost hit point for every step you take and prevents damage from walking on damaging tiles. This reduces damage from HURT AND HURTMORE by 1/3, prevents Stopspell from working against you. It also reduces damage from flame breath attacks by 1/3 as well."
 	}
 ]

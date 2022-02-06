@@ -45,7 +45,7 @@
 		"name": "Erdrick's Sword",
 		"atk": 40,
 		"gp": 0,
-		"found": ["Dragonlord's Castle"],
+		"found": ["Charlock Castle"],
 		"description": "The sword of your great ancestor has tremendous power!"
 	}
 ]

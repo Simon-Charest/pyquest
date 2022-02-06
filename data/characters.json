@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Solo",
+    "title": "Hero",
+    "location": "Tantegel",
+    "hp": 0,
+    "mp": 0,
+    "gp": 120,
+    "exp": 0,
+    "crit": 0.015625,
+    "weapon": null,
+    "armor": null,
+    "shield": null
+  },
+  {
+    "name":  "Erdrick",
+    "title": "Ascendant",
+    "location": "Tantegel"
+  },
+  {
+    "name":  "Lorik",
+    "title": "King",
+    "location": "Tantegel"
+  },
+  {
+    "name":  "Gwaelin",
+    "title": "Princess",
+    "location": "Swamp Cave"
+  },
+  {
+    "name":  "Dragonlord",
+    "title": "Villain",
+    "location": "Charlock Castle"
+  }
+]

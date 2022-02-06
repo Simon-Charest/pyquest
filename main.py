@@ -9,7 +9,7 @@ import random
 
 def main():
     # Hero
-    hero = load_json('data/hero.json')
+    characters = load_json('data/characters.json')
     commands = load_json('data/commands.json')
     levels = load_json('data/levels.json')
     save = load_json('data/save.json')
@@ -28,6 +28,7 @@ def main():
 
     # Gameplay
     enemy = random.choice(enemies)
+    hero = get(characters, 'title', 'Hero')
     weapon = get(weapons, 'name', 'Club')
     armor = get(armors, 'name', 'Leather Armor')
     shield = get(shields, 'name', 'Leather Shield')
@@ -43,7 +44,7 @@ def main():
 
 
 def get(list_, key, value):
-    return [item for item in list_ if item.get(key) == value]
+    return next(item for item in list_ if item.get(key) == value)
 
 
 def load_json(file):
