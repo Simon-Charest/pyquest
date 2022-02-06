@@ -10,19 +10,31 @@ import random
 def main():
     # ui.run()
     # init_game()
+
+    # Hero
+    hero = load_json('data/hero.json')
+    commands = load_json('data/commands.json')
     levels = load_json('data/levels.json')
+    save = load_json('data/save.json')
     spells = load_json('data/spells.json')
-    weapons = load_json('data/weapons.json')
+
+    # Items
     armors = load_json('data/armors.json')
     shields = load_json('data/shields.json')
-    monsters = load_json('data/monsters.json')
-    commands = load_json('data/commands.json')
-    hero = load_json('data/hero.json')
+    weapons = load_json('data/weapons.json')
+    items = load_json('data/items.json')
 
-    monster = random.choice(monsters)
+    # Map
+    enemies = load_json('data/enemies.json')
+    locations = load_json('data/locations.json')
+    terrains = load_json('data/terrains.json')
 
+    # Gameplay
+    enemy = random.choice(enemies)
+
+    # Display
     print(hero)
-    print(monster)
+    print(enemy)
 
 
 def load_json(file):

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Tantegel",
+    "type": "castle",
+    "hasEnemies": false
+  },
+  {
+    "name": "Brecconary",
+    "type": "village",
+    "hasEnemies": false
+  },
+  {
+    "name": "Erdrick's Cave",
+    "type": "cave",
+    "hasEnemies": false
+  },
+  {
+    "name": "Galenholm",
+    "type": "village",
+    "hasEnemies": false
+  },
+  {
+    "name": "Kol",
+    "type": "village",
+    "hasEnemies": false
+  },
+  {
+    "name": "Quagmire Cave",
+    "type": "cave",
+    "hasEnemies": true
+  },
+  {
+    "name": "Rimuldar",
+    "type": "village",
+    "hasEnemies": false
+  },
+  {
+    "name": "Craggy Cave",
+    "type": "cave",
+    "hasEnemies": true
+  },
+  {
+    "name": "Damdara",
+    "type": "village",
+    "hasEnemies": true
+  },
+  {
+    "name": "Cantlin",
+    "type": "village",
+    "hasEnemies": false
+  },
+  {
+    "name": "The Dragonlord's Castle",
+    "type": "castle",
+    "hasEnemies": true
+  }
+]

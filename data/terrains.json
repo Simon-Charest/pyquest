@@ -1,6 +1,62 @@
 [
   {
     "name": "Land",
-    "img": "resources/terrains/land.png"
+    "img": "resources/terrains/land.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Water",
+    "img": "resources/terrains/water.png",
+    "isPassable": false,
+    "damage": 0
+  },
+  {
+    "name": "Swamp",
+    "img": "resources/terrains/swamp.png",
+    "isPassable": true,
+    "damage": 1
+  },
+  {
+    "name": "Desert",
+    "img": "resources/terrains/desert.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Hill",
+    "img": "resources/terrains/hill.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Mountain",
+    "img": "resources/terrains/mountain.png",
+    "isPassable": false,
+    "damage": 0
+  },
+  {
+    "name": "Shoals",
+    "img": "resources/terrains/shoals.png",
+    "isPassable": false,
+    "damage": 0
+  },
+  {
+    "name": "Ice",
+    "img": "resources/terrains/ice.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Damage",
+    "img": "resources/terrains/damage.png",
+    "isPassable": true,
+    "damage": 2
+  },
+  {
+    "name": "Lava",
+    "img": "resources/terrains/lava.png",
+    "isPassable": true,
+    "damage": 3
   }
 ]

@@ -1,0 +1,88 @@
+[
+	{
+		"name": "Herb",
+		"hp": 35,
+		"gp": 24,
+		"description": "The Medicinal Herb restores 20 to 35 of your Hit Points."
+	},
+	{
+		"name": "Wings",
+		"gp": 70,
+		"description": "The Wings of the Wyvern, thrown up into the air, will transport you home.",
+		"spell": "Return"
+	},
+	{
+		"name": "Torch",
+		"gp": 8,
+		"description": "Carry several to illuminate caves once you begin to travel.",
+		"spell": "Radiant"
+	},
+	{
+		"name": "Dragon's Scale",
+		"def": 2,
+		"gp": 20,
+		"description": "The wearer of this scale receives an extra measure of protection (+2 defense)."
+	},
+	{
+		"name": "Fairy Water",
+		"gp": 38,
+		"description": "A vial of the magical water keeps enemies at bay for a short time while you travel."
+	},
+	{
+		"name": "Key",
+		"gp": 53,
+		"description": "Locked doors can be opened only with these magic keys."
+	},
+	{
+		"name": "Ball of Light",
+		"description": "A powerful relic from an earlier time when the world was bright."
+	},
+	{
+		"name": "Erdrick's Tablet",
+		"description": "Hidden for ages, the tablet holds Erdrick's words of advice."
+	},
+	{
+		"name": "Fairies' Flute",
+		"description": "The music of this instrument can cast certain evil beings (The Golem) into sleep."
+	},
+	{
+		"name": "Silver Harp",
+		"description": "A dangerous item to obtain, but you must in order to complete the quest. Summons an enemy when used."
+	},
+	{
+		"name": "Staff of Rain",
+		"description": "The magic of this item is not at first clear. Listen to clues to understand."
+	},
+	{
+		"name": "Stone of Sunlight",
+		"description": "When paired with the Staff of Rain a potent magic is unleashed."
+	},
+	{
+		"name": "Gwaelin's Love",
+		"description": "You must have some direction to your quest. Gwaelin's love is your compass."
+	},
+	{
+		"name": "Erdrick's Token",
+		"description": "The warrior who discovers this object thereby proves his heritage."
+	},
+	{
+		"name": "Rainbow Drop",
+		"description": "He who carries the Rainbow Drop may reach an island without a ship."
+	},
+	{
+		"name": "Cursed Belt",
+		"gp": 180,
+		"description": "Not all treasure is good. This belt will squeeze you like a vise. Don't put it on; just take it and sell it. If you wear it anyway, you cannot enter Catle Tantegel (or get expelled immediately if revived) and sometimes miss turns during combat. To remove the curse, speak with the old man in Brecconary Town to remove the items."
+	},
+	{
+		"name": "Death Necklace",
+		"gp": 1200,
+		"description": "Buried and difficult to find, the evil necklace will bring a good price at a tool shop."
+	},
+	{
+		"name": "Fighter's Ring",
+		"atk": 2,
+		"gp": 15,
+		"description": "Due to misprogramming, the ring does nothing. It's otherwise claimed to increase your fighting ability (most common claims being +2 attack or increasing critical hit chance.)"
+	}
+]

@@ -3,42 +3,49 @@
 		"name": "Bamboo Pole",
 		"atk": 2,
 		"gp": 10,
+		"found": ["Brecconary", "Cantlin"],
 		"description": "Inexpensive but not very effective in battle. Save your gold for the Club."
 	},
 	{
 		"name": "Club",
 		"atk": 4,
 		"gp": 60,
+		"found": ["Brecconary", "Cantlin", "Garinham"],
 		"description": "A good first weapon. You can buy it in Brecconary at the start of the game."
 	},
 	{
 		"name": "Copper Sword",
 		"atk": 10,
 		"gp": 180,
+		"found": ["Brecconary", "Cantlin", "Garinham", "Kol", "Rimuldar"],
 		"description": "By the time you have enough gold for the sword, you'll need its extra power."
 	},
 	{
 		"name": "Hand Axe",
 		"atk": 15,
 		"gp": 560,
+		"found": ["Garinham", "Rimuldar"],
 		"description": "An excellent weapon for a reasonable price."
 	},
 	{
 		"name": "Broad Sword",
 		"atk": 10,
 		"gp": 1500,
+		"found": ["Rimuldar", "Cantlin"],
 		"description": "Forged of hardened steel, this sword demands respect."
 	},
 	{
 		"name": "Flame Sword",
 		"atk": 28,
 		"gp": 9800,
+		"found": ["Cantlin"],
 		"description": "Few can withstand this fearsome weapon when wielded by an experienced warrior."
 	},
 	{
 		"name": "Erdrick's Sword",
 		"atk": 40,
 		"gp": 0,
+		"found": ["Dragonlord's Castle"],
 		"description": "The sword of your great ancestor has tremendous power!"
 	}
 ]
