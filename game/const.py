@@ -1,12 +1,21 @@
 __author__ = 'Simon Charest'
-__copyright__ = 'Copyright 2019-2021, SLCIT inc.'
+__copyright__ = '© 2019-2022 SLCIT Inc. All rights reserved.'
 __credits__ = [
-    'Koichi Nakamura',
-    'Yuji Horii',
-    'Akira Toriyama',
-    'Koichi Sugiyama',
-    'Enix',
-    'Nintendo'
+    {"Programmer": "Koichi Nakamura"},
+    {"Director": "Koichi Nakamura"},
+    {"Designer": "Yuji Horii"},
+    {"Writer": "Yuji Horii"},
+    {"Artist": "Akira Toriyama"},
+    {"Composer": "Koichi Sugiyama"},
+    {"Producer": "Yukinobu Chida"},
+    {"Developer": "Chunsoft"},
+    {
+        "Publisher":
+        [
+            {"JP": "Enix"},
+            {"NA": "Nintendo"}
+        ]
+    }
 ]
 __email__ = 'simoncharest@gmail.com'
 __license__ = 'GNU'

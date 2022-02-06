@@ -2,15 +2,12 @@
 PyQuery is a Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
 """
 
-from game import const, data, logic, ui
+from game import const, logic, ui
 import json
 import random
 
 
 def main():
-    # ui.run()
-    # init_game()
-
     # Hero
     hero = load_json('data/hero.json')
     commands = load_json('data/commands.json')
@@ -31,10 +28,22 @@ def main():
 
     # Gameplay
     enemy = random.choice(enemies)
+    weapon = get(weapons, 'name', 'Club')
+    armor = get(armors, 'name', 'Leather Armor')
+    shield = get(shields, 'name', 'Leather Shield')
+    spell = get(spells, 'name', 'Heal')
 
     # Display
     print(hero)
+    print(weapon)
+    print(armor)
+    print(shield)
+    print(spell)
     print(enemy)
+
+
+def get(list_, key, value):
+    return [item for item in list_ if item.get(key) == value]
 
 
 def load_json(file):
@@ -43,30 +52,6 @@ def load_json(file):
     stream.close()
 
     return json_data
-
-
-def init_game():
-    hero = logic.init_hero()
-
-    # Display hero stats
-    print(hero)
-
-    # Get stats for specific level
-    print(logic.get_level(data.LEVELS, 0))
-
-    # Get specific spell
-    print(logic.get_element(data.SPELLS, "Heal"))
-
-    # Get specific equipment
-    print(logic.get_element(data.WEAPONS, "Club"))
-    print(logic.get_element(data.ARMORS, "Leather Armor"))
-    print(logic.get_element(data.SHIELDS, "Leather Shield"))
-
-    # Get random enemy
-    print(logic.get_random_element(data.ENEMIES))
-
-    # Display list of commands
-    print(logic.get_commands())
 
 
 if __name__ == '__main__':

@@ -1,13 +1,4 @@
-from game import data
 import random
-
-
-def calc_defense_power():
-    return True
-
-
-def get_commands():
-    return data.COMMANDS
 
 
 def get_element(list_, name):
