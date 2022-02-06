@@ -6,6 +6,12 @@
     "damage": 0
   },
   {
+    "name": "Forest",
+    "img": "resources/terrains/forest.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
     "name": "Water",
     "img": "resources/terrains/water.png",
     "isPassable": false,
@@ -58,5 +64,29 @@
     "img": "resources/terrains/lava.png",
     "isPassable": true,
     "damage": 3
+  },
+  {
+    "name": "Bridge",
+    "img": "resources/terrains/bridge.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Castle",
+    "img": "resources/terrains/castle.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Village",
+    "img": "resources/terrains/village.png",
+    "isPassable": true,
+    "damage": 0
+  },
+  {
+    "name": "Cave",
+    "img": "resources/terrains/cave.png",
+    "isPassable": true,
+    "damage": 0
   }
 ]

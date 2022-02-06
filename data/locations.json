@@ -1,6 +1,11 @@
 [
   {
-    "name": "Tantegel",
+    "name": "Alefgard",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
+    "name": "Tantegel Castle",
     "type": "castle",
     "hasEnemies": false
   },
@@ -15,7 +20,7 @@
     "hasEnemies": false
   },
   {
-    "name": "Galenholm",
+    "name": "Garinham",
     "type": "village",
     "hasEnemies": false
   },
@@ -25,7 +30,17 @@
     "hasEnemies": false
   },
   {
-    "name": "Quagmire Cave",
+    "name": "Northern Cave",
+    "type": "cave",
+    "hasEnemies": false
+  },
+  {
+    "name": "Mountain Cave",
+    "type": "cave",
+    "hasEnemies": true
+  },
+  {
+    "name": "Swamp Cave",
     "type": "cave",
     "hasEnemies": true
   },
@@ -35,12 +50,12 @@
     "hasEnemies": false
   },
   {
-    "name": "Craggy Cave",
+    "name": "Southern Cave",
     "type": "cave",
-    "hasEnemies": true
+    "hasEnemies": false
   },
   {
-    "name": "Damdara",
+    "name": "Hauksness",
     "type": "village",
     "hasEnemies": true
   },
@@ -50,7 +65,7 @@
     "hasEnemies": false
   },
   {
-    "name": "The Dragonlord's Castle",
+    "name": "Charlock Castle",
     "type": "castle",
     "hasEnemies": true
   }
