@@ -8,11 +8,11 @@
         "key": "S"
     },
     {
-        "name": "Run",
-        "key": "R"
-    },
-    {
         "name": "Item",
         "key": "I"
+    },
+    {
+        "name": "Run",
+        "key": "R"
     }
 ]

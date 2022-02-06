@@ -5,6 +5,7 @@ PyQuery is a Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
 from game import const, logic, ui
 import json
 import random
+from msvcrt import getch, getche
 
 
 def main():
@@ -42,9 +43,36 @@ def main():
     print(spell)
     print(enemy)
 
+    input_command(commands)
+
 
 def get(list_, key, value):
     return next(item for item in list_ if item.get(key) == value)
+
+
+def input_command(commands):
+    for command in commands:
+        print(f"{command['key']}: {command['name']}")
+
+    while True:
+        print('Command?')
+
+        command = input()
+
+        if command in ['F', 'f']:
+            print('Fight')
+
+        if command in ['S', 's']:
+            print('Spell')
+
+        if command in ['I', 'i']:
+            print('Item')
+
+        if command in ['R', 'r']:
+            print('Run')
+
+        if command in ['Q', 'q']:
+            break
 
 
 def load_json(file):
