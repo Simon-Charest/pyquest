@@ -5,6 +5,31 @@
     "hasEnemies": true
   },
   {
+    "name": "The Plains of Tantegel",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
+    "name": "The Griar Peninsula",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
+    "name": "Rimuldar Islands",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
+    "name": "Domdora Desert",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
+    "name": "The Melchidor Heights",
+    "type": "land",
+    "hasEnemies": true
+  },
+  {
     "name": "Tantegel Castle",
     "type": "castle",
     "hasEnemies": false

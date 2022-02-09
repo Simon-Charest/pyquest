@@ -1,18 +1,67 @@
 [
     {
         "name": "Fight",
-        "key": "F"
-    },
-    {
-        "name": "Spell",
-        "key": "S"
-    },
-    {
-        "name": "Item",
-        "key": "I"
+        "key": "F",
+        "mode": ["walkabout", "fighting"]
     },
     {
         "name": "Run",
-        "key": "R"
+        "key": "R",
+        "mode": ["fighting"]
+    },
+    {
+        "name": "Talk",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Status",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Stairs",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Search",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Spell",
+        "key": "S",
+        "mode": ["walkabout", "fighting"]
+    },
+    {
+        "name": "Item",
+        "key": "I",
+        "mode": ["walkabout", "fighting"]
+    },
+    {
+        "name": "Door",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Take",
+        "key": null,
+        "mode": []
+    },
+    {
+        "name": "Buy",
+        "key": "B",
+        "mode": ["walkabout"]
+    },
+    {
+        "name": "Sell",
+        "key": "E",
+        "mode": ["walkabout"]
+    },
+    {
+        "name": "Rest",
+        "key": "T",
+        "mode": ["walkabout"]
     }
 ]

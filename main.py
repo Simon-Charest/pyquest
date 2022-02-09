@@ -34,6 +34,7 @@ def main():
     armor = get(armors, 'name', 'Leather Armor')
     shield = get(shields, 'name', 'Leather Shield')
     spell = get(spells, 'name', 'Heal')
+    mode = 'walkabout'
 
     # Display
     print(hero)
@@ -43,36 +44,55 @@ def main():
     print(spell)
     print(enemy)
 
-    input_command(commands)
+    walkabout_commands = get(commands, 'mode', 'walkabout')
+    fighting_commands = get(commands, 'mode', 'fighting')
+
+    while True:
+        if mode == 'fighting':
+            print_commands(fighting_commands)
+
+        else:
+            print_commands(walkabout_commands)
+
+        print('Command?')
+
+        command = input().lower()
+
+        if mode == 'fighting':
+            if command == 'f':
+                print('Fight')
+
+            elif command == 's':
+                print('Spell')
+
+            elif command == 'i':
+                print('Item')
+
+            elif command == 'r':
+                mode = 'walkabout'
+
+        else:
+            if command == 'f':
+                mode = 'fighting'
+
+            elif command == 's':
+                print('Spell')
+
+            elif command == 'i':
+                print('Item')
+
+            elif command == 'b':
+                print('Buy')
+
+            elif command == 'e':
+                print('Sell')
+
+            elif command == 't':
+                print('Rest')
 
 
 def get(list_, key, value):
-    return next(item for item in list_ if item.get(key) == value)
-
-
-def input_command(commands):
-    for command in commands:
-        print(f"{command['key']}: {command['name']}")
-
-    while True:
-        print('Command?')
-
-        command = input()
-
-        if command in ['F', 'f']:
-            print('Fight')
-
-        if command in ['S', 's']:
-            print('Spell')
-
-        if command in ['I', 'i']:
-            print('Item')
-
-        if command in ['R', 'r']:
-            print('Run')
-
-        if command in ['Q', 'q']:
-            break
+    return [item for item in list_ if value in item.get(key)]
 
 
 def load_json(file):
@@ -81,6 +101,18 @@ def load_json(file):
     stream.close()
 
     return json_data
+
+
+def print_commands(commands):
+    string = ''
+
+    for command in commands:
+        if string:
+            string += ' | '
+
+        string += f"{command['key']}: {command['name']}"
+
+    print(string)
 
 
 if __name__ == '__main__':

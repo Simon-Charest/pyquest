@@ -1,7 +1,7 @@
 [
   {
-    "name": "Land",
-    "img": "resources/terrains/land.png",
+    "name": "Plain",
+    "img": "resources/terrains/plain.png",
     "isPassable": true,
     "damage": 0
   },
