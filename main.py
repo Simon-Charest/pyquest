@@ -28,7 +28,6 @@ def main():
     terrains = load_json('data/terrains.json')
 
     # Gameplay
-    enemy = random.choice(enemies)
     hero = get(characters, 'title', 'Hero')
     weapon = get(weapons, 'name', 'Club')
     armor = get(armors, 'name', 'Leather Armor')
@@ -42,7 +41,6 @@ def main():
     print(armor)
     print(shield)
     print(spell)
-    print(enemy)
 
     walkabout_commands = get(commands, 'mode', 'walkabout')
     fighting_commands = get(commands, 'mode', 'fighting')
@@ -74,6 +72,13 @@ def main():
         else:
             if command == 'f':
                 mode = 'fighting'
+                enemy = random.choice(enemies)
+                print(enemy)
+
+                while enemy['hp'] > 0:
+                    enemy['hp'] -= 1
+                    print(enemy['hp'])
+                    pass
 
             elif command == 's':
                 print('Spell')
