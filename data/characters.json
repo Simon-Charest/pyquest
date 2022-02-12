@@ -6,7 +6,7 @@
     "hp": 0,
     "mp": 0,
     "gp": 120,
-    "exp": 0,
+    "xp": 0,
     "crit": 0.015625,
     "weapon": null,
     "armor": null,

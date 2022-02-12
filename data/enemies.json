@@ -2,6 +2,8 @@
   {
     "name": "Slime",
     "hp": 3,
+    "atk": 5,
+    "def": 3,
     "xp": 1,
     "gp": 1,
     "img": "resources/enemies/slime.gif"
@@ -9,6 +11,8 @@
   {
     "name": "Red Slime",
     "hp": 4,
+    "atk": 7,
+    "def": 3,
     "xp": 1,
     "gp": 2,
     "img": "resources/enemies/red_slime.gif"
@@ -16,6 +20,8 @@
   {
     "name": "Metal Slime",
     "hp": 4,
+    "atk": 10,
+    "def": 255,
     "xp": 115,
     "gp": 6,
     "spells": ["Hurt"],
@@ -24,6 +30,8 @@
   {
     "name": "Drakee",
     "hp": 6,
+    "atk": 9,
+    "def": 6,
     "xp": 2,
     "gp": 3,
     "img": "resources/enemies/drakee.gif"
@@ -31,6 +39,8 @@
   {
     "name": "Magidrakee",
     "hp": 15,
+    "atk": 14,
+    "def": 14,
     "xp": 5,
     "gp": 12,
     "spells": ["Hurt"],
@@ -39,6 +49,8 @@
   {
     "name": "Drakeema",
     "hp": 20,
+    "atk": 22,
+    "def": 26,
     "xp": 11,
     "gp": 20,
     "spells": ["Heal"],
@@ -112,6 +124,8 @@
   {
     "name": "Druin",
     "hp": 22,
+    "atk": 22,
+    "def": 18,
     "xp": 7,
     "gp": 16,
     "img": "resources/enemies/druin.gif"
@@ -119,6 +133,8 @@
   {
     "name": "Druinlord",
     "hp": 35,
+    "atk": 47,
+    "def": 40,
     "xp": 20,
     "gp": 85,
     "img": "resources/enemies/druinlord.gif"
@@ -126,6 +142,8 @@
   {
     "name": "Droll",
     "hp": 25,
+    "atk": 24,
+    "def": 24,
     "xp": 10,
     "gp": 25,
     "img": "resources/enemies/droll.gif"
@@ -133,6 +151,8 @@
   {
     "name": "Drollmagi",
     "hp": 38,
+    "atk": 52,
+    "def": 50,
     "xp": 22,
     "gp": 90,
     "img": "resources/enemies/drollmagi.gif"
@@ -140,6 +160,8 @@
   {
     "name": "Skeleton",
     "hp": 30,
+    "atk": 28,
+    "def": 22,
     "xp": 11,
     "gp": 30,
     "img": "resources/enemies/skeleton.gif"
@@ -147,6 +169,8 @@
   {
     "name": "Wraith",
     "hp": 36,
+    "atk": 44,
+    "def": 34,
     "xp": 17,
     "gp": 60,
     "spells": ["Heal"],
@@ -155,6 +179,8 @@
   {
     "name": "Wraith Knight",
     "hp": 46,
+    "atk": 68,
+    "def": 56,
     "xp": 28,
     "gp": 120,
     "spells": ["Heal"],
@@ -170,6 +196,8 @@
   {
     "name": "Wolf",
     "hp": 34,
+    "atk": 40,
+    "def": 30,
     "xp": 16,
     "gp": 50,
     "img": "resources/enemies/wolf.gif"
@@ -177,6 +205,8 @@
   {
     "name": "Wolflord",
     "hp": 38,
+    "atk": 50,
+    "def": 36,
     "xp": 20,
     "gp": 80,
     "spells": ["Stopspell"],
@@ -185,6 +215,8 @@
   {
     "name": "Werewolf",
     "hp": 60,
+    "atk": 86,
+    "def": 70,
     "xp": 40,
     "gp": 155,
     "img": "resources/enemies/werewolf.gif"
@@ -192,6 +224,8 @@
   {
     "name": "Goldman",
     "hp": 50,
+    "atk": 48,
+    "def": 40,
     "xp": 6,
     "gp": 200,
     "img": "resources/enemies/goldman.gif"
@@ -199,6 +233,8 @@
   {
     "name": "Golem",
     "hp": 70,
+    "atk": 120,
+    "def": 60,
     "xp": 5,
     "gp": 10,
     "img": "resources/enemies/golem.gif"
@@ -206,6 +242,8 @@
   {
     "name": "Stoneman",
     "hp": 160,
+    "atk": 100,
+    "def": 40,
     "xp": 65,
     "gp": 140,
     "img": "resources/enemies/stoneman.gif"
@@ -213,6 +251,8 @@
   {
     "name": "Wyvern",
     "hp": 42,
+    "atk": 56,
+    "def": 48,
     "xp": 24,
     "gp": 100,
     "img": "resources/enemies/wyvern.gif"
@@ -220,6 +260,8 @@
   {
     "name": "Magiwyvern",
     "hp": 58,
+    "atk": 78,
+    "def": 68,
     "xp": 34,
     "gp": 140,
     "spells": ["Sleep"],
@@ -228,6 +270,8 @@
   {
     "name": "Starwyvern",
     "hp": 65,
+    "atk": 86,
+    "def": 80,
     "xp": 43,
     "gp": 160,
     "spells": ["Healmore"],
@@ -236,6 +280,8 @@
   {
     "name": "Knight",
     "hp": 55,
+    "atk": 76,
+    "def": 78,
     "xp": 33,
     "gp": 130,
     "spells": ["Stopspell"],
@@ -244,6 +290,8 @@
   {
     "name": "Axe Knight",
     "hp": 70,
+    "atk": 94,
+    "def": 82,
     "xp": 54,
     "gp": 165,
     "spells": ["Sleep"],
@@ -252,6 +300,8 @@
   {
     "name": "Armored Knight",
     "hp": 90,
+    "atk": 105,
+    "def": 86,
     "xp": 70,
     "gp": 140,
     "spells": ["Healmore", "Hurtmore"],
@@ -260,6 +310,8 @@
   {
     "name": "Green Dragon",
     "hp": 65,
+    "atk": 88,
+    "def": 74,
     "xp": 45,
     "gp": 160,
     "img": "resources/enemies/green_dragon.gif"
@@ -267,6 +319,8 @@
   {
     "name": "Blue Dragon",
     "hp": 70,
+    "atk": 98,
+    "def": 84,
     "xp": 60,
     "gp": 150,
     "img": "resources/enemies/blue_dragon.gif"
@@ -274,6 +328,8 @@
   {
     "name": "Red Dragon",
     "hp": 100,
+    "atk": 120,
+    "def": 90,
     "xp": 100,
     "gp": 140,
     "spells": ["Sleep"],
@@ -282,6 +338,9 @@
   {
     "name": "Dragonlord",
     "hp": 100,
+    "atk": 90,
+    "def": 85,
+    "agi": 55,
     "xp": 0,
     "gp": 0,
     "spells": ["Hurtmore", "Stopspell"],
@@ -290,6 +349,9 @@
   {
     "name": "King Dragon",
     "hp": 130,
+    "atk": 140,
+    "def": 200,
+    "agi": 90,
     "xp": 0,
     "gp": 0,
     "img": "resources/enemies/king_dragon.gif"

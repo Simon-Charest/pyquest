@@ -1,5 +1,5 @@
 import tkinter
-import PIL
+# import PIL
 
 
 def run():
