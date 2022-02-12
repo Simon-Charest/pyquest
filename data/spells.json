@@ -58,5 +58,17 @@
 		"mp": 5,
 		"target": "enemy",
 		"description": "More devastating than Hurt; with Hurtmore you can challenge even the strongest enemies. Deals 58~65 damage."
+	},
+	{
+		"name": "Fire",
+		"mp": 0,
+		"target": "enemy",
+		"description": "Breathes fiery breath."
+	},
+	{
+		"name": "Firemore",
+		"mp": 0,
+		"target": "enemy",
+		"description": "Breathes stronger fiery breath."
 	}
 ]

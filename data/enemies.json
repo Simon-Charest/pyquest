@@ -4,8 +4,10 @@
     "hp": 3,
     "atk": 5,
     "def": 3,
+    "agi": 15,
     "xp": 1,
     "gp": 1,
+    "spells": null,
     "img": "resources/enemies/slime.gif"
   },
   {
@@ -13,8 +15,10 @@
     "hp": 4,
     "atk": 7,
     "def": 3,
+    "agi": 15,
     "xp": 1,
     "gp": 2,
+    "spells": null,
     "img": "resources/enemies/red_slime.gif"
   },
   {
@@ -22,6 +26,7 @@
     "hp": 4,
     "atk": 10,
     "def": 255,
+    "agi": 255,
     "xp": 115,
     "gp": 6,
     "spells": ["Hurt"],
@@ -32,8 +37,10 @@
     "hp": 6,
     "atk": 9,
     "def": 6,
+    "agi": 15,
     "xp": 2,
     "gp": 3,
+    "spells": null,
     "img": "resources/enemies/drakee.gif"
   },
   {
@@ -41,6 +48,7 @@
     "hp": 15,
     "atk": 14,
     "def": 14,
+    "agi": 15,
     "xp": 5,
     "gp": 12,
     "spells": ["Hurt"],
@@ -51,42 +59,62 @@
     "hp": 20,
     "atk": 22,
     "def": 26,
+    "agi": 32,
     "xp": 11,
     "gp": 20,
-    "spells": ["Heal"],
+    "spells": ["Heal", "Hurt"],
     "img": "resources/enemies/drakeema.gif"
   },
   {
     "name": "Ghost",
     "hp": 7,
+    "atk": 11,
+    "def": 8,
+    "agi": 15,
     "xp": 3,
     "gp": 5,
+    "spells": null,
     "img": "resources/enemies/ghost.gif"
   },
   {
     "name": "Poltergeist",
     "hp": 23,
+    "atk": 18,
+    "def": 15,
+    "agi": 20,
     "xp": 8,
     "gp": 18,
+    "spells": ["Hurt"],
     "img": "resources/enemies/poltergeist.gif"
   },
   {
     "name": "Specter",
     "hp": 36,
+    "atk": 40,
+    "def": 38,
+    "agi": 49,
     "xp": 18,
     "gp": 70,
+    "spells": ["Hurtmore", "Sleep"],
     "img": "resources/enemies/specter.gif"
   },
   {
     "name": "Magician",
     "hp": 13,
+    "atk": 11,
+    "def": 12,
+    "agi": 15,
     "xp": 4,
     "gp": 12,
+    "spells": ["Hurt"],
     "img": "resources/enemies/magician.gif"
   },
   {
     "name": "Warlock",
     "hp": 30,
+    "atk": 28,
+    "def": 22,
+    "agi": 49,
     "xp": 13,
     "gp": 35,
     "spells": ["Hurt", "Sleep"],
@@ -95,30 +123,45 @@
   {
     "name": "Wizard",
     "hp": 65,
+    "atk": 80,
+    "def": 70,
+    "agi": 247,
     "xp": 50,
     "gp": 165,
-    "spells": ["Hurtmore"],
+    "spells": ["Hurtmore", "Sleep"],
     "img": "resources/enemies/wizard.gif"
   },
   {
     "name": "Scorpion",
     "hp": 20,
+    "atk": 18,
+    "def": 16,
+    "agi": 15,
     "xp": 6,
     "gp": 16,
+    "spells": null,
     "img": "resources/enemies/scorpion.gif"
   },
   {
     "name": "Metal Scorpion",
     "hp": 22,
+    "atk": 36,
+    "def": 42,
+    "agi": 15,
     "xp": 14,
     "gp": 40,
+    "spells": null,
     "img": "resources/enemies/metal_scorpion.gif"
   },
   {
     "name": "Rogue Scorpion",
     "hp": 50,
+    "atk": 60,
+    "def": 90,
+    "agi": 127,
     "xp": 37,
     "gp": 150,
+    "spells": null,
     "img": "resources/enemies/rogue_scorpion.gif"
   },
   {
@@ -126,8 +169,10 @@
     "hp": 22,
     "atk": 22,
     "def": 18,
+    "agi": 15,
     "xp": 7,
     "gp": 16,
+    "spells": null,
     "img": "resources/enemies/druin.gif"
   },
   {
@@ -135,8 +180,10 @@
     "hp": 35,
     "atk": 47,
     "def": 40,
+    "agi": 240,
     "xp": 20,
     "gp": 85,
+    "spells": ["Hurt"],
     "img": "resources/enemies/druinlord.gif"
   },
   {
@@ -144,8 +191,10 @@
     "hp": 25,
     "atk": 24,
     "def": 24,
+    "agi": 14,
     "xp": 10,
     "gp": 25,
+    "spells": null,
     "img": "resources/enemies/droll.gif"
   },
   {
@@ -153,8 +202,10 @@
     "hp": 38,
     "atk": 52,
     "def": 50,
+    "agi": 34,
     "xp": 22,
     "gp": 90,
+    "spells": ["Hurt", "Heal", "Stopspell"],
     "img": "resources/enemies/drollmagi.gif"
   },
   {
@@ -162,8 +213,10 @@
     "hp": 30,
     "atk": 28,
     "def": 22,
+    "agi": 15,
     "xp": 11,
     "gp": 30,
+    "spells": null,
     "img": "resources/enemies/skeleton.gif"
   },
   {
@@ -171,6 +224,7 @@
     "hp": 36,
     "atk": 44,
     "def": 34,
+    "agi": 112,
     "xp": 17,
     "gp": 60,
     "spells": ["Heal"],
@@ -181,6 +235,7 @@
     "hp": 46,
     "atk": 68,
     "def": 56,
+    "agi": 80,
     "xp": 28,
     "gp": 120,
     "spells": ["Heal"],
@@ -189,8 +244,12 @@
   {
     "name": "Demon Knight",
     "hp": 50,
+    "atk": 79,
+    "def": 64,
+    "agi": 255,
     "xp": 37,
     "gp": 150,
+    "spells": ["Hurt", "Stopspell"],
     "img": "resources/enemies/demon_knight.gif"
   },
   {
@@ -198,8 +257,10 @@
     "hp": 34,
     "atk": 40,
     "def": 30,
+    "agi": 31,
     "xp": 16,
     "gp": 50,
+    "spells": null,
     "img": "resources/enemies/wolf.gif"
   },
   {
@@ -207,6 +268,7 @@
     "hp": 38,
     "atk": 50,
     "def": 36,
+    "agi": 71,
     "xp": 20,
     "gp": 80,
     "spells": ["Stopspell"],
@@ -217,8 +279,10 @@
     "hp": 60,
     "atk": 86,
     "def": 70,
+    "agi": 31,
     "xp": 40,
     "gp": 155,
+    "spells": null,
     "img": "resources/enemies/werewolf.gif"
   },
   {
@@ -226,8 +290,10 @@
     "hp": 50,
     "atk": 48,
     "def": 40,
+    "agi": 71,
     "xp": 6,
     "gp": 200,
+    "spells": null,
     "img": "resources/enemies/goldman.gif"
   },
   {
@@ -235,8 +301,10 @@
     "hp": 70,
     "atk": 120,
     "def": 60,
+    "agi": 127,
     "xp": 5,
     "gp": 10,
+    "spells": null,
     "img": "resources/enemies/golem.gif"
   },
   {
@@ -244,8 +312,10 @@
     "hp": 160,
     "atk": 100,
     "def": 40,
+    "agi": 47,
     "xp": 65,
     "gp": 140,
+    "spells": null,
     "img": "resources/enemies/stoneman.gif"
   },
   {
@@ -253,8 +323,10 @@
     "hp": 42,
     "atk": 56,
     "def": 48,
+    "agi": 79,
     "xp": 24,
     "gp": 100,
+    "spells": null,
     "img": "resources/enemies/wyvern.gif"
   },
   {
@@ -262,9 +334,10 @@
     "hp": 58,
     "atk": 78,
     "def": 68,
+    "agi": 32,
     "xp": 34,
     "gp": 140,
-    "spells": ["Sleep"],
+    "spells": ["Sleep", "Fire"],
     "img": "resources/enemies/magiwyvern.gif"
   },
   {
@@ -272,9 +345,10 @@
     "hp": 65,
     "atk": 86,
     "def": 80,
+    "agi": 128,
     "xp": 43,
     "gp": 160,
-    "spells": ["Healmore"],
+    "spells": ["Healmore", "Fire"],
     "img": "resources/enemies/starwyvern.gif"
   },
   {
@@ -282,6 +356,7 @@
     "hp": 55,
     "atk": 76,
     "def": 78,
+    "agi": 103,
     "xp": 33,
     "gp": 130,
     "spells": ["Stopspell"],
@@ -292,9 +367,10 @@
     "hp": 70,
     "atk": 94,
     "def": 82,
+    "agi": 243,
     "xp": 54,
     "gp": 165,
-    "spells": ["Sleep"],
+    "spells": ["Sleep", "Stopspell"],
     "img": "resources/enemies/axe_knight.gif"
   },
   {
@@ -302,6 +378,7 @@
     "hp": 90,
     "atk": 105,
     "def": 86,
+    "agi": 147,
     "xp": 70,
     "gp": 140,
     "spells": ["Healmore", "Hurtmore"],
@@ -312,8 +389,10 @@
     "hp": 65,
     "atk": 88,
     "def": 74,
+    "agi": 127,
     "xp": 45,
     "gp": 160,
+    "spells": ["Fire"],
     "img": "resources/enemies/green_dragon.gif"
   },
   {
@@ -321,8 +400,10 @@
     "hp": 70,
     "atk": 98,
     "def": 84,
+    "agi": 255,
     "xp": 60,
     "gp": 150,
+    "spells": ["Fire"],
     "img": "resources/enemies/blue_dragon.gif"
   },
   {
@@ -330,9 +411,10 @@
     "hp": 100,
     "atk": 120,
     "def": 90,
+    "agi": 247,
     "xp": 100,
     "gp": 140,
-    "spells": ["Sleep"],
+    "spells": ["Sleep", "Fire"],
     "img": "resources/enemies/red_dragon.gif"
   },
   {
@@ -354,6 +436,7 @@
     "agi": 90,
     "xp": 0,
     "gp": 0,
+    "spells": ["Firemore"],
     "img": "resources/enemies/king_dragon.gif"
   }
 ]
