@@ -16,8 +16,8 @@
     },
     {
         "name": "Status",
-        "key": null,
-        "mode": []
+        "key": "T",
+        "mode": ["walkabout", "fighting"]
     },
     {
         "name": "Stairs",
@@ -61,7 +61,7 @@
     },
     {
         "name": "Rest",
-        "key": "T",
+        "key": "R",
         "mode": ["walkabout"]
     }
 ]
