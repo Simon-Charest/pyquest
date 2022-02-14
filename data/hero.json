@@ -1,0 +1,38 @@
+{
+  "name": "Solo",
+  "lv": {
+    "lv": 1,
+    "xp_req": 0,
+    "str": 6,
+    "agi": 6,
+    "hp_max": 15,
+    "mp_max": 5,
+    "spells": null
+  },
+  "hp": 15,
+  "mp": 5,
+  "gp": 30,
+  "xp": 0,
+  "crit": 0.015625,
+  "weapon": {
+    "name": "Club",
+    "atk": 4,
+    "gp": 60,
+    "found": [
+      "Brecconary",
+      "Cantlin",
+      "Garinham"
+    ],
+    "description": "A good first weapon. You can buy it in Brecconary at the start of the game."
+  },
+  "armor": {
+    "name": "Clothes",
+    "def": 2,
+    "gp": 20,
+    "found": [
+      "Brecconary"
+    ],
+    "description": "Clothes will keep you warm, but not much else."
+  },
+  "shield": null
+}

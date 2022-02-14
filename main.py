@@ -1,38 +1,65 @@
-"""
-PyQuery is a Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
-"""
+#!/usr/bin/python
+# coding=utf-8
 
-from game import const, logic, ui
+__author__ = 'Simon Charest'
+__copyright__ = '© 2019-2022 SLCIT Inc. All rights reserved.'
+__credits__ = [
+    {"Programmer": "Koichi Nakamura"},
+    {"Director": "Koichi Nakamura"},
+    {"Designer": "Yuji Horii"},
+    {"Writer": "Yuji Horii"},
+    {"Artist": "Akira Toriyama"},
+    {"Composer": "Koichi Sugiyama"},
+    {"Producer": "Yukinobu Chida"},
+    {"Developer": "Chunsoft"},
+    {
+        "Publisher":
+        [
+            {"JP": "Enix"},
+            {"NA": "Nintendo"}
+        ]
+    }
+]
+__email__ = 'simoncharest@gmail.com'
+__license__ = 'MIT'
+__maintainer__ = 'Simon Charest'
+__project__ = 'PyQuest'
+__status__ = 'Developement'
+__version__ = '1.0.0'
+
+# PyQuery is a Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
+
+from game import logic
 import json
 import random
-from msvcrt import getch, getche
 
 
 def main():
     # Hero
-    characters = load_json('data/characters.json')
-    commands = load_json('data/commands.json')
-    levels = load_json('data/levels.json')
-    save = load_json('data/save.json')
-    spells = load_json('data/spells.json')
+    hero_file = 'data/hero.json'
+    characters = logic.load_json('data/characters.json')
+    commands = logic.load_json('data/commands.json')
+    levels = logic.load_json('data/levels.json')
+    hero = logic.load_json('data/hero.json')
+    spells = logic.load_json('data/spells.json')
 
     # Items
-    armors = load_json('data/armors.json')
-    shields = load_json('data/shields.json')
-    weapons = load_json('data/weapons.json')
-    items = load_json('data/items.json')
+    armors = logic.load_json('data/armors.json')
+    shields = logic.load_json('data/shields.json')
+    weapons = logic.load_json('data/weapons.json')
+    items = logic.load_json('data/items.json')
 
     # Map
-    enemies = load_json('data/enemies.json')
-    locations = load_json('data/locations.json')
-    terrains = load_json('data/terrains.json')
+    enemies = logic.load_json('data/enemies.json')
+    locations = logic.load_json('data/locations.json')
+    terrains = logic.load_json('data/terrains.json')
 
     # Gameplay
-    hero = get(characters, 'title', 'Hero')
-    hero[0]['level'] = get_lesser_or_equal(levels, 'xp', hero[0]['xp'])[0]
-    hero[0]['weapon'] = get(weapons, 'name', 'Club')[0]
-    hero[0]['armor'] = get(armors, 'name', 'Leather Armor')[0]
-    hero[0]['shield'] = get(shields, 'name', 'Leather Shield')[0]
+    hero = logic.load_json(hero_file)
+    # hero[0]['level'] = get_lesser_or_equal(levels, 'xp', hero[0]['xp'])[0]
+    # hero[0]['weapon'] = get(weapons, 'name', 'Club')[0]
+    # hero[0]['armor'] = get(armors, 'name', 'Leather Armor')[0]
+    # hero[0]['shield'] = get(shields, 'name', 'Leather Shield')[0]
     mode = 'walkabout'
 
     # Display
@@ -42,16 +69,16 @@ def main():
     # print(shield)
     # print(spell)
 
-    walkabout_commands = get(commands, 'mode', 'walkabout')
-    fighting_commands = get(commands, 'mode', 'fighting')
+    walkabout_commands = logic.get(commands, 'mode', 'walkabout')
+    fighting_commands = logic.get(commands, 'mode', 'fighting')
     enemy = enemies[0]
 
     while True:
         if mode == 'fighting':
-            print_commands(fighting_commands)
+            logic.print_commands(fighting_commands)
 
         else:
-            print_commands(walkabout_commands)
+            logic.print_commands(walkabout_commands)
 
         print('Command?')
 
@@ -60,10 +87,10 @@ def main():
         if mode == 'walkabout':
             if command == 'f':
                 mode = 'fighting'
-                enemy = get_enemy(enemies, hero[0]['level']['str'])
+                enemy = logic.get_enemy(enemies, hero['lv']['str'])
 
             elif command == 't':
-                print_status(hero)
+                logic.print_status(hero)
 
             elif command == 's':
                 print('Spell')
@@ -78,11 +105,14 @@ def main():
                 print('Sell')
 
             elif command == 'r':
-                print('Rest')
+                hero['gp'] = int(0.75 * hero['gp'])
+                hero['hp'] = hero['lv']['hp_max']
+                hero['mp'] = hero['lv']['mp_max']
+                logic.dump_json(hero_file, hero)
 
         else:
             if command == 'f':
-                mode = fight(hero, enemy)
+                mode = logic.fight(hero, enemy)
 
             elif command == 's':
                 print('Spell')
@@ -92,94 +122,6 @@ def main():
 
             elif command == 'r':
                 mode = 'walkabout'
-
-
-def get_enemy(enemies, hero_str):
-    weak_enemies = get_greater_or_equal(enemies, 'atk', hero_str)
-    enemy = random.choice(weak_enemies)
-    print(f"A {enemy['name']} draws near!")
-
-    return enemy
-
-
-def fight(hero, enemy):
-    hero_atk = int(hero[0]['level']['str'] / 2) + hero[0]['weapon']['atk']
-    enemy_hp = random.randint(0, hero_atk) - enemy['def']
-    print(f"{hero[0]['name']} attacks!")
-
-    if enemy_hp <= 0:
-        print('The attack failed and there was no loss of Hit Points!')
-
-    else:
-        enemy['hp'] -= enemy_hp
-        print(f"The {enemy['name']}'s Hit Points have been reduced by {enemy_hp}.")
-
-    if enemy['hp'] <= 0:
-        hero[0]['xp'] += enemy['xp']
-        hero[0]['gp'] += enemy['gp']
-        print(f"Thou hast done well in defeating the {enemy['name']}.")
-        print(f"Thy Experience increases by {enemy['xp']}.")
-        print(f"Thy GOLD increases by {enemy['gp']}.")
-
-        return 'walkabout'
-
-    else:
-        hero_def = int(hero[0]['level']['agi'] / 2) + hero[0]['armor']['def'] + hero[0]['shield']['def']
-        hero_hp = random.randint(0, enemy['atk']) - hero_def
-        print(f"The {enemy['name']} attacks!")
-        # print(f"{enemy['name']} chants the spell of {spell}.")
-        # print(f"{enemy['name']} is breathing fire.")
-        # print('The spell will not work.')
-
-        if hero_hp <= 0:
-            print('A miss! No damage hath been scored!')
-
-        else:
-            hero[0]['hp'] += hero_hp
-            print(f"Thy Hits decreased by {hero_hp}.")
-
-        if hero[0]['hp'] >= hero[0]['level']['hp']:
-            print('Thou art dead.')
-            exit()
-
-    return 'fighting'
-
-
-def get(list_, key, value):
-    return [item for item in list_ if value in item.get(key)]
-
-
-def get_greater_or_equal(list_, key, value):
-    return [item for item in list_ if value >= item.get(key)]
-
-
-def get_lesser_or_equal(list_, key, value):
-    return [item for item in list_ if value <= item.get(key)]
-
-
-def load_json(file):
-    stream = open(file)
-    json_data = json.load(stream)
-    stream.close()
-
-    return json_data
-
-
-def print_commands(commands):
-    string = ''
-
-    for command in commands:
-        if string:
-            string += ' | '
-
-        string += f"{command['key']}: {command['name']}"
-
-    print(string)
-
-
-def print_status(hero):
-    print(f"{hero[0]['name']} | LV: {hero[0]['level']['lv']} | HP: {hero[0]['hp']} | MP: {hero[0]['mp']}"
-          f" | G: {hero[0]['gp']} | E: {hero[0]['xp']}")
 
 
 if __name__ == '__main__':

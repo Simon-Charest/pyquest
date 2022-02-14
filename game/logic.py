@@ -1,62 +1,103 @@
+import json
 import random
 
 
-def get_element(list_, name):
-    """ Get specific element """
-    for element in list_:
-        if list_[element]['name'] == name:
-            return list_[element]
-
-    return None
+def dump_json(file, json_data):
+    stream = open(file, 'w')
+    json.dump(json_data, stream, indent=2)
+    stream.close()
 
 
-def get_level(levels, exp):
-    """ Get level stats, by experience points """
-    for level in sorted(levels.keys(), reverse=True):
-        if exp >= levels[level]["exp_req"]:
-            return levels[level]
+def fight(hero, enemy):
+    hero_atk = int(hero['lv']['str'] / 2) + int(hero['weapon']['atk'])
+    enemy_dmg = random.randint(0, hero_atk) - enemy['def']
+    print(f"{hero['name']} attacks!")
+
+    if enemy_dmg <= 0:
+        print('The attack failed and there was no loss of Hit Points!')
+
+    else:
+        enemy['hp'] -= enemy_dmg
+        print(f"The {enemy['name']}'s Hit Points have been reduced by {enemy_dmg}.")
+
+    if enemy['hp'] <= 0:
+        hero['xp'] += enemy['xp']
+        hero['gp'] += enemy['gp']
+        print(f"Thou hast done well in defeating the {enemy['name']}.")
+        print(f"Thy Experience increases by {enemy['xp']}.")
+        print(f"Thy GOLD increases by {enemy['gp']}.")
+
+        return 'walkabout'
+
+    else:
+        hero_def = int(hero['lv']['agi'] / 2)
+
+        if hero['armor']:
+            hero_def += hero['armor']['def']
+
+        if hero['shield']:
+            hero_def += hero['shield']['def']
+
+        hero_dmg = random.randint(0, enemy['atk']) - hero_def
+        print(f"The {enemy['name']} attacks!")
+        # print(f"{enemy['name']} chants the spell of {spell}.")
+        # print(f"{enemy['name']} is breathing fire.")
+        # print('The spell will not work.')
+
+        if hero_dmg <= 0:
+            print('A miss! No damage hath been scored!')
+
+        else:
+            hero['hp'] -= hero_dmg
+            print(f"Thy Hits decreased by {hero_dmg}.")
+
+        if hero['hp'] <= 0:
+            print('Thou art dead.')
+            exit()
+
+    return 'fighting'
 
 
-def get_power(power, item_power=0):
-    return power + item_power
+def get(list_, key, value):
+    return [item for item in list_ if value in item.get(key)]
 
 
-def get_random_element(list_):
-    """ Get random element """
-    return random.choice(list_)
+def get_enemy(enemies, hero_str):
+    weak_enemies = get_greater_or_equal(enemies, 'atk', hero_str)
+    enemy = random.choice(weak_enemies)
+    print(f"A {enemy['name']} draws near!")
+
+    return enemy
 
 
-def init_hero(exp=0):
-    return {
-        "name": "Solo",
-        "lv": get_level(data.LEVELS, exp)["lv"],
-        "hp": get_level(data.LEVELS, exp)["hp_max"],
-        "mp": get_level(data.LEVELS, exp)["mp_max"],
-        "str": get_level(data.LEVELS, exp)["str"],
-        "agi": get_level(data.LEVELS, exp)["agi"],
-        "atk": get_power(get_level(data.LEVELS, exp)["str"]),
-        "def": get_power(get_level(data.LEVELS, exp)["agi"]),
-        "gp": 120,
-        "exp": get_level(data.LEVELS, exp)["exp_req"],
-        "weapon": None,
-        "armor": None,
-        "shield": None,
-        "spells": get_level(data.LEVELS, exp)["spells"]
-    }
+def get_greater_or_equal(list_, key, value):
+    return [item for item in list_ if value >= item.get(key)]
 
 
-def load(file, mode='rt'):
-    """ Read file and return content, line by line, as a list """
-    with open(file, mode) as handle:
-        lines = handle.read().splitlines()
-
-    return lines
+def get_lesser_or_equal(list_, key, value):
+    return [item for item in list_ if value <= item.get(key)]
 
 
-def save(file, content, mode='wt'):
-    """ Write file, line by line """
-    with open(file, mode) as handle:
-        for line in content:
-            handle.write(line + '\n')
+def load_json(file):
+    stream = open(file)
+    json_data = json.load(stream)
+    stream.close()
 
-    return True
+    return json_data
+
+
+def print_commands(commands):
+    string = ''
+
+    for command in commands:
+        if string:
+            string += ' | '
+
+        string += f"{command['key']}: {command['name']}"
+
+    print(string)
+
+
+def print_status(hero):
+    print(f"{hero['name']} | LV: {hero['lv']['lv']} | HP: {hero['hp']} | MP: {hero['mp']}"
+          f" | G: {hero['gp']} | E: {hero['xp']}")

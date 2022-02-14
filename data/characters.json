@@ -2,15 +2,7 @@
   {
     "name": "Solo",
     "title": "Hero",
-    "location": "Tantegel",
-    "hp": 0,
-    "mp": 0,
-    "gp": 120,
-    "xp": 0,
-    "crit": 0.015625,
-    "weapon": null,
-    "armor": null,
-    "shield": null
+    "location": "Tantegel"
   },
   {
     "name":  "Erdrick",

@@ -1,40 +1,40 @@
 [
 	{
 		"lv": 1,
-		"xp": 0,
+		"xp_req": 0,
 		"str": 6,
 		"agi": 6,
-		"hp": 15,
-		"mp": 5,
+		"hp_max": 15,
+		"mp_max": 5,
 		"spells": null
 	},
 	{
 		"lv": 2,
-		"xp": 7,
+		"xp_req": 7,
 		"str": 7,
 		"agi": 6,
-		"hp": 22,
-		"mp": 5,
+		"hp_max": 22,
+		"mp_max": 5,
 		"spells": null
 	},
 	{
 		"lv": 3,
-		"xp": 23,
+		"xp_req": 23,
 		"str": 9,
 		"agi": 8,
-		"hp": 24,
-		"mp": 5,
+		"hp_max": 24,
+		"mp_max": 5,
 		"spells": [
 			"Heal"
 		]
 	},
 	{
 		"lv": 4,
-		"xp": 47,
+		"xp_req": 47,
 		"str": 9,
 		"agi": 10,
-		"hp": 31,
-		"mp": 16,
+		"hp_max": 31,
+		"mp_max": 16,
 		"spells": [
 			"Heal",
 			"Hurt"
@@ -42,11 +42,11 @@
 	},
 	{
 		"lv": 5,
-		"xp": 110,
+		"xp_req": 110,
 		"str": 14,
 		"agi": 12,
-		"hp": 35,
-		"mp": 20,
+		"hp_max": 35,
+		"mp_max": 20,
 		"spells": [
 			"Heal",
 			"Hurt"
@@ -54,11 +54,11 @@
 	},
 	{
 		"lv": 6,
-		"xp": 220,
+		"xp_req": 220,
 		"str": 18,
 		"agi": 12,
-		"hp": 38,
-		"mp": 24,
+		"hp_max": 38,
+		"mp_max": 24,
 		"spells": [
 			"Heal",
 			"Hurt"
@@ -66,11 +66,11 @@
 	},
 	{
 		"lv": 7,
-		"xp": 450,
+		"xp_req": 450,
 		"str": 20,
 		"agi": 19,
-		"hp": 40,
-		"mp": 26,
+		"hp_max": 40,
+		"mp_max": 26,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -79,11 +79,11 @@
 	},
 	{
 		"lv": 8,
-		"xp": 800,
+		"xp_req": 800,
 		"str": 24,
 		"agi": 22,
-		"hp": 46,
-		"mp": 29,
+		"hp_max": 46,
+		"mp_max": 29,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -92,11 +92,11 @@
 	},
 	{
 		"lv": 9,
-		"xp": 1300,
+		"xp_req": 1300,
 		"str": 32,
 		"agi": 24,
-		"hp": 50,
-		"mp": 36,
+		"hp_max": 50,
+		"mp_max": 36,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -106,11 +106,11 @@
 	},
 	{
 		"lv": 10,
-		"xp": 2000,
+		"xp_req": 2000,
 		"str": 37,
 		"agi": 33,
-		"hp": 54,
-		"mp": 40,
+		"hp_max": 54,
+		"mp_max": 40,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -121,11 +121,11 @@
 	},
 	{
 		"lv": 11,
-		"xp": 2900,
+		"xp_req": 2900,
 		"str": 42,
 		"agi": 37,
-		"hp": 62,
-		"mp": 50,
+		"hp_max": 62,
+		"mp_max": 50,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -136,11 +136,11 @@
 	},
 	{
 		"lv": 12,
-		"xp": 4000,
+		"xp_req": 4000,
 		"str": 50,
 		"agi": 42,
-		"hp": 63,
-		"mp": 58,
+		"hp_max": 63,
+		"mp_max": 58,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -152,11 +152,11 @@
 	},
 	{
 		"lv": 13,
-		"xp": 5500,
+		"xp_req": 5500,
 		"str": 54,
 		"agi": 50,
-		"hp": 70,
-		"mp": 64,
+		"hp_max": 70,
+		"mp_max": 64,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -169,11 +169,11 @@
 	},
 	{
 		"lv": 14,
-		"xp": 7500,
+		"xp_req": 7500,
 		"str": 62,
 		"agi": 57,
-		"hp": 78,
-		"mp": 70,
+		"hp_max": 78,
+		"mp_max": 70,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -186,11 +186,11 @@
 	},
 	{
 		"lv": 15,
-		"xp": 10000,
+		"xp_req": 10000,
 		"str": 70,
 		"agi": 66,
-		"hp": 86,
-		"mp": 72,
+		"hp_max": 86,
+		"mp_max": 72,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -204,11 +204,11 @@
 	},
 	{
 		"lv": 16,
-		"xp": 13000,
+		"xp_req": 13000,
 		"str": 74,
 		"agi": 72,
-		"hp": 92,
-		"mp": 95,
+		"hp_max": 92,
+		"mp_max": 95,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -222,11 +222,11 @@
 	},
 	{
 		"lv": 17,
-		"xp": 17000,
+		"xp_req": 17000,
 		"str": 74,
 		"agi": 80,
-		"hp": 100,
-		"mp": 100,
+		"hp_max": 100,
+		"mp_max": 100,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -241,11 +241,11 @@
 	},
 	{
 		"lv": 18,
-		"xp": 21000,
+		"xp_req": 21000,
 		"str": 87,
 		"agi": 86,
-		"hp": 115,
-		"mp": 108,
+		"hp_max": 115,
+		"mp_max": 108,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -260,11 +260,11 @@
 	},
 	{
 		"lv": 19,
-		"xp": 25000,
+		"xp_req": 25000,
 		"str": 89,
 		"agi": 88,
-		"hp": 130,
-		"mp": 115,
+		"hp_max": 130,
+		"mp_max": 115,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -280,11 +280,11 @@
 	},
 	{
 		"lv": 20,
-		"xp": 29000,
+		"xp_req": 29000,
 		"str": 94,
 		"agi": 90,
-		"hp": 138,
-		"mp": 128,
+		"hp_max": 138,
+		"mp_max": 128,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -300,11 +300,11 @@
 	},
 	{
 		"lv": 21,
-		"xp": 33000,
+		"xp_req": 33000,
 		"str": 97,
 		"agi": 92,
-		"hp": 149,
-		"mp": 135,
+		"hp_max": 149,
+		"mp_max": 135,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -320,11 +320,11 @@
 	},
 	{
 		"lv": 22,
-		"xp": 37000,
+		"xp_req": 37000,
 		"str": 99,
 		"agi": 92,
-		"hp": 158,
-		"mp": 146,
+		"hp_max": 158,
+		"mp_max": 146,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -340,11 +340,11 @@
 	},
 	{
 		"lv": 23,
-		"xp": 41000,
+		"xp_req": 41000,
 		"str": 101,
 		"agi": 96,
-		"hp": 165,
-		"mp": 153,
+		"hp_max": 165,
+		"mp_max": 153,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -360,11 +360,11 @@
 	},
 	{
 		"lv": 24,
-		"xp": 45000,
+		"xp_req": 45000,
 		"str": 105,
 		"agi": 100,
-		"hp": 170,
-		"mp": 161,
+		"hp_max": 170,
+		"mp_max": 161,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -380,11 +380,11 @@
 	},
 	{
 		"lv": 25,
-		"xp": 49000,
+		"xp_req": 49000,
 		"str": 115,
 		"agi": 102,
-		"hp": 174,
-		"mp": 161,
+		"hp_max": 174,
+		"mp_max": 161,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -400,11 +400,11 @@
 	},
 	{
 		"lv": 26,
-		"xp": 53000,
+		"xp_req": 53000,
 		"str": 119,
 		"agi": 107,
-		"hp": 180,
-		"mp": 168,
+		"hp_max": 180,
+		"mp_max": 168,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -420,11 +420,11 @@
 	},
 	{
 		"lv": 27,
-		"xp": 57000,
+		"xp_req": 57000,
 		"str": 127,
 		"agi": 109,
-		"hp": 189,
-		"mp": 175,
+		"hp_max": 189,
+		"mp_max": 175,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -440,11 +440,11 @@
 	},
 	{
 		"lv": 28,
-		"xp": 61000,
+		"xp_req": 61000,
 		"str": 132,
 		"agi": 117,
-		"hp": 195,
-		"mp": 180,
+		"hp_max": 195,
+		"mp_max": 180,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -460,11 +460,11 @@
 	},
 	{
 		"lv": 29,
-		"xp": 65000,
+		"xp_req": 65000,
 		"str": 137,
 		"agi": 122,
-		"hp": 200,
-		"mp": 190,
+		"hp_max": 200,
+		"mp_max": 190,
 		"spells": [
 			"Heal",
 			"Hurt",
@@ -480,11 +480,11 @@
 	},
 	{
 		"lv": 30,
-		"xp": 65535,
+		"xp_req": 65535,
 		"str": 142,
 		"agi": 132,
-		"hp": 210,
-		"mp": 200,
+		"hp_max": 210,
+		"mp_max": 200,
 		"spells": [
 			"Heal",
 			"Hurt",
