@@ -36,10 +36,10 @@ def fight(hero, enemy, levels):
 
         if hero['xp'] >= hero['level']['xp_next']:
             print('Courage and wit have served thee well. Thou hast been promoted to the next level.')
-            print(f"Thy Power increases by {1}.")
-            print(f"They Response Speed increases by {2}.")
-            print(f"They Maximum Hit Points increase by {3}.")
             hero['level'] = logic.get_lesser(levels, 'xp_next', hero['xp'])[0]
+            # print(f"Thy Power increases by {1}.")
+            # print(f"They Response Speed increases by {2}.")
+            # print(f"They Maximum Hit Points increase by {3}.")
 
         return 'walkabout'
 

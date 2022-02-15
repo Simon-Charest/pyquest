@@ -27,7 +27,13 @@ __project__ = 'PyQuest'
 __status__ = 'Developement'
 __version__ = '1.0.0'
 
-# PyQuery is a Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
+"""
+PyQuery is a command-line interface Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
+
+Documentation:
+- Dragon Warrior – Text Dump (https://gamefaqs.gamespot.com/nes/563408-dragon-warrior/faqs/54647).
+- Mike's RPG Center - Dragon Warrior - Experience Levels (https://mikesrpgcenter.com/dw1/levels.html);
+"""
 
 from game import command, file, logic, ui
 
@@ -56,8 +62,8 @@ def main():
     hero = file.load_json(hero_file)
     mode = 'walkabout'
 
-    walkabout_commands = logic.get(commands, 'mode', 'walkabout')
     fighting_commands = logic.get(commands, 'mode', 'fighting')
+    walkabout_commands = logic.get(commands, 'mode', 'walkabout')
     enemy = enemies[0]
 
     while True:
@@ -68,7 +74,6 @@ def main():
             ui.print_commands(walkabout_commands)
 
         print('Command?')
-
         string = input().lower()
 
         if string == 't':
