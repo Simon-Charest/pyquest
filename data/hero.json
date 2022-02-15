@@ -1,19 +1,18 @@
 {
   "name": "Solo",
-  "lv": {
-    "lv": 1,
-    "xp_req": 0,
-    "str": 6,
+  "level": {
+    "lv": 2,
+    "xp_next": 23,
+    "str": 7,
     "agi": 6,
-    "hp_max": 15,
-    "mp_max": 5,
+    "hp_max": 22,
+    "mp_max": 0,
     "spells": null
   },
-  "hp": 15,
-  "mp": 5,
-  "gp": 30,
-  "xp": 0,
-  "crit": 0.015625,
+  "hp": 20,
+  "mp": 0,
+  "gp": 10,
+  "xp": 13,
   "weapon": {
     "name": "Club",
     "atk": 4,

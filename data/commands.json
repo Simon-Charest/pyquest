@@ -60,6 +60,16 @@
         "mode": ["walkabout"]
     },
     {
+        "name": "Sleep",
+        "key": "L",
+        "mode": ["walkabout"]
+    },
+    {
+        "name": "Save",
+        "key": "A",
+        "mode": ["walkabout"]
+    },
+    {
         "name": "Rest",
         "key": "R",
         "mode": ["walkabout"]
