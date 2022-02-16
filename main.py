@@ -35,7 +35,7 @@ Documentation:
 - Mike's RPG Center - Dragon Warrior - Experience Levels (https://mikesrpgcenter.com/dw1/levels.html);
 """
 
-from game import command, file, logic, ui
+from game import command, file, logic, cli
 
 
 def main():
@@ -68,10 +68,10 @@ def main():
 
     while True:
         if mode == 'fighting':
-            ui.print_commands(fighting_commands)
+            cli.print_commands(fighting_commands)
 
         else:
-            ui.print_commands(walkabout_commands)
+            cli.print_commands(walkabout_commands)
 
         print('Command?')
         string = input().lower()
