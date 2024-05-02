@@ -29,3 +29,6 @@ __version__: str = "1.0.0"
 
 SRC_PATH: Path = Path(__file__).parent
 ROOT_PATH: Path = SRC_PATH.parent
+DATA_PATH: Path = SRC_PATH.joinpath("data")
+
+TILE_SIZE: int = 64

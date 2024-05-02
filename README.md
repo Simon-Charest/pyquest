@@ -1,5 +1,5 @@
 # Pyquest
-A Dragon Quest 1 (Famicom) / Dragon Warrior 1 (NES) clone.
+A Dragon Quest (Famicom) / Warrior (NES) clone.
 
 ## Built With
 
