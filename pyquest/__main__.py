@@ -2,6 +2,7 @@ from argparse import ArgumentParser, Namespace
 from collections import Counter
 from cv2 import imread
 from cv2.typing import MatLike
+from numpy import array, array_equal
 
 # Pygquest
 from constant import *
@@ -24,55 +25,53 @@ def main() -> None:
 
         for x in range(0, image.shape[0], TILE_SIZE):
             for y in range(0, image.shape[1], TILE_SIZE):
-                b, g, r = image[x + 17, y + 17]
-
                 # Plain
-                if (b, g, r) == (141, 253, 159):
+                if array_equal(image[x + 17, y + 17], array((141, 253, 159))):
                     string += "P"
 
                 # Desert
-                elif (b, g, r) == (128, 234, 255):
+                elif array_equal(image[x + 17, y + 17], array((128, 234, 255))):
                     string += "D"
 
                 # Forest
-                elif (b, g, r) == (115, 130, 100):
+                elif array_equal(image[x + 17, y + 17], array((115, 130, 100))):
                     string += "F"
 
                 # Hill
-                elif (b, g, r) == (120, 162, 204):
+                elif array_equal(image[x + 17, y + 17], array((120, 162, 204))):
                     string += "H"
 
                 # Mountain
-                elif (b, g, r) == (117, 117, 117):
+                elif array_equal(image[x + 17, y + 17], array((117, 117, 117))):
                     string += "M"
                 
                 # Water
-                elif (b, g, r) == (235, 195, 117):
+                elif array_equal(image[x + 17, y + 17], array((235, 195, 117))):
                     string += "W"
 
                 # Swamp
-                elif (b, g, r) == (96, 64, 88):
+                elif array_equal(image[x + 17, y + 17], array((96, 64, 88))):
                     string += "S"
 
                 # Cave
-                elif (b, g, r) == (96, 64, 88):
+                elif array_equal(image[x + 17, y + 17], array((96, 64, 88))):
                     string += "C"
 
                 # Castle
-                elif (b, g, r) == (117, 117, 121):
+                elif array_equal(image[x + 17, y + 17], array((117, 117, 121))):
                     string += "A"
                 
                 # Town
-                elif (b, g, r) == (58, 46, 234):
+                elif array_equal(image[x + 17, y + 17], array((58, 46, 234))):
                     string += "T"
 
                 # Wall
-                elif (b, g, r) == (173, 173, 173):
+                elif array_equal(image[x + 17, y + 17], array((173, 173, 173))):
                     string += "L"
 
                 # Undefined
                 else:
-                    #print(b, g, r)
+                    print(image[x + 17, y + 17])
                     string += "_"
 
             string += "\n"
