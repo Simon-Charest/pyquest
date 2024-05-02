@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ```
 9. Run solution:
 ```
-python pyquest
+python pyquest -h
 ```
 10. Run tests:
 ```
