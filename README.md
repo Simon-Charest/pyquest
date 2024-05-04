@@ -68,5 +68,7 @@ pytest
 - Email: [Simon Charest](mailto:simoncharest@gmail.com).
 
 ## Acknowledgements
+- An 8x8 tileset pixel recreation of the OG Dragon Warrior map I made for a DnD campaign. Took about 30 hours;
+Artwork (https://www.reddit.com/r/dragonquest/comments/qu45w1/an_8x8_tileset_pixel_recreation_of_the_og_dragon/);
 - Dragon Warrior – Text Dump (https://gamefaqs.gamespot.com/nes/563408-dragon-warrior/faqs/54647);
 - Mike's RPG Center - Dragon Warrior - Experience Levels (https://mikesrpgcenter.com/dw1/levels.html).

@@ -1,5 +1,4 @@
 from argparse import ArgumentParser, Namespace
-from collections import Counter
 from pathlib import Path
 
 # Pygquest
@@ -10,12 +9,17 @@ from game import command, file, logic, cli
 
 def main() -> None:
     argument_parser: ArgumentParser = ArgumentParser("Pyquest: A Dragon Quest (Famicom) / Warrior (NES) clone.")
-    argument_parser.add_argument("--map", "-m", action="store_true", help="convert map from bitmap to ascii")
+    argument_parser.add_argument("--map_c2b", "-b", action="store_true", help="convert map from characters to bitmap")
+    argument_parser.add_argument("--map_b2c", "-c", action="store_true", help="convert map from bitmap to characters")
     argument_parser.add_argument("--game", "-g", action="store_true", help="start game")
     arguments: Namespace = argument_parser.parse_args()
 
-    if arguments.map:
-        map: str = read_map(str(DATA_PATH.joinpath("map.png")))
+    if arguments.map_c2b:
+        map: str = open(DATA_PATH.joinpath("map.txt")).read()
+        write_map(map, DATA_PATH.joinpath("map.png"))
+
+    if arguments.map_b2c:
+        map: str = read_map(DATA_PATH.joinpath("map.png"))
         open(DATA_PATH.joinpath("map.txt"), "w").write(map)
 
     if arguments.game:
