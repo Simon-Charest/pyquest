@@ -1,9 +1,10 @@
-from game import file, logic
+from file import *
+from logic import *
 import random
 
 
 def approach(enemies, hero):
-    enemy = logic.get_enemy(enemies, hero['level']['str'])
+    enemy = get_enemy(enemies, hero['level']['str'])
     print(f"A {enemy['name']} draws near!")
 
     return enemy, 'fighting'
@@ -36,7 +37,7 @@ def fight(hero, enemy, levels):
 
         if hero['xp'] >= hero['level']['xp_next']:
             print('Courage and wit have served thee well. Thou hast been promoted to the next level.')
-            hero['level'] = logic.get_lesser(levels, 'xp_next', hero['xp'])[0]
+            hero['level'] = get_lesser(levels, 'xp_next', hero['xp'])[0]
             # print(f"Thy Power increases by {1}.")
             # print(f"They Response Speed increases by {2}.")
             # print(f"They Maximum Hit Points increase by {3}.")
@@ -91,7 +92,7 @@ def run(hero):
 
 
 def save(hero, hero_file):
-    file.dump_json(hero_file, hero)
+    dump_json(hero_file, hero)
     print('Thy deeds have been recorded on the Imperial Scrolls of Honor.')
 
 

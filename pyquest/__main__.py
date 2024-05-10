@@ -4,15 +4,23 @@ from pathlib import Path
 # Pygquest
 from constant import *
 from utils import *
-from game import command, file, logic, cli
+from cli import *
+from command import *
+from file import *
+from game import run_game
+from logic import *
 
 
 def main() -> None:
     argument_parser: ArgumentParser = ArgumentParser("Pyquest: A Dragon Quest (Famicom) / Warrior (NES) clone.")
+    argument_parser.add_argument("--map", "-m", action="store_true", help="load map")
     argument_parser.add_argument("--map_c2b", "-b", action="store_true", help="convert map from characters to bitmap")
     argument_parser.add_argument("--map_b2c", "-c", action="store_true", help="convert map from bitmap to characters")
     argument_parser.add_argument("--game", "-g", action="store_true", help="start game")
     arguments: Namespace = argument_parser.parse_args()
+
+    if arguments.map:
+        run_game()
 
     if arguments.map_c2b:
         map: str = open(DATA_PATH.joinpath("map.txt")).read()
