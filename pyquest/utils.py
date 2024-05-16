@@ -69,6 +69,83 @@ def read_map(filename: Path) -> str:
     return string
 
 
+def get_image(color: tuple[int, int, int], width: int = 1, height: int = 1) -> ndarray:
+    image: ndarray = zeros((1, 1, 3), uint8)
+    y: int
+    x: int
+
+    for y in range(0, height):
+        for x in range(0, width):
+            image[x, y] = color
+
+    return image
+
+
+def read_zelda_map(filename: Path, tile_size: int = 1, threshold: float = 0.0001) -> str:
+    map: MatLike = imread(str(filename))
+    y: int
+    x: int
+    tile: ndarray
+    string: str = ""
+    cave: ndarray = get_image((0, 0, 0))
+    ground1: ndarray = get_image((189, 239, 247))
+    ground2: ndarray = get_image((123, 123, 123))
+    ladder: ndarray = get_image((247, 82, 90))
+    forest1: ndarray = get_image((41, 189, 90))
+    forest2: ndarray = get_image((82, 82, 173))
+    mountain1: ndarray = get_image((0, 74, 239))
+    mountain2: ndarray = get_image((0, 152, 0))
+    mountain3: ndarray = get_image((181, 181, 181))
+    water: ndarray = get_image((255, 0, 24))
+
+    for y in range(0, map.shape[0], tile_size):
+        if y % 40 == 0:
+            continue
+
+        for x in range(0, map.shape[1], tile_size):
+            if x % 60 == 0:
+                continue
+
+            tile = map[y : y + tile_size, x : x + tile_size]
+
+            if are_equal(tile, cave, threshold):
+                string += "C"
+
+            elif are_equal(tile, ground1, threshold):
+                string += " "
+                
+            elif are_equal(tile, ground2, threshold):
+                string += " "
+
+            elif are_equal(tile, ladder, threshold):
+                string += " "
+
+            elif are_equal(tile, forest1, threshold):
+                string += "F"
+
+            elif are_equal(tile, forest2, threshold):
+                string += "F"
+            
+            elif are_equal(tile, mountain1, threshold):
+                string += "M"
+
+            elif are_equal(tile, mountain2, threshold):
+                string += "M"
+
+            elif are_equal(tile, mountain3, threshold):
+                string += "M"
+
+            elif are_equal(tile, water, threshold):
+                string += "W"
+
+            else:
+                string += "_"
+
+        string += "\n"
+
+    return string
+
+
 def read_tiles(pathname: Path) -> dict[str, MatLike]:
     paths: list[str] = glob(str(pathname))
     path: str

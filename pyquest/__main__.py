@@ -16,6 +16,7 @@ def main() -> None:
     argument_parser.add_argument("--map", "-m", action="store_true", help="load map")
     argument_parser.add_argument("--map_c2b", "-b", action="store_true", help="convert map from characters to bitmap")
     argument_parser.add_argument("--map_b2c", "-c", action="store_true", help="convert map from bitmap to characters")
+    argument_parser.add_argument("--zelda", "-z", action="store_true", help="load The Legend of Zelda map")
     argument_parser.add_argument("--game", "-g", action="store_true", help="start game")
     arguments: Namespace = argument_parser.parse_args()
 
@@ -30,49 +31,53 @@ def main() -> None:
         map: str = read_map(DATA_PATH.joinpath("map.png"))
         open(DATA_PATH.joinpath("map.txt"), "w").write(map)
 
+    if arguments.zelda:
+        map: str = read_zelda_map(DATA_PATH.joinpath("zelda1.png"))
+        open(DATA_PATH.joinpath("zelda1.txt"), "w").write(map)
+
     if arguments.game:
         # Hero
         hero_file: Path = DATA_PATH.joinpath("hero.json")
-        commands: list = file.load_json(DATA_PATH.joinpath("commands.json"))
-        levels: list = file.load_json(DATA_PATH.joinpath("levels.json"))
-        characters: list = file.load_json(DATA_PATH.joinpath("characters.json"))
-        hero: dict = file.load_json(hero_file)
-        spells: list = file.load_json(DATA_PATH.joinpath("spells.json"))
+        commands: list = load_json(DATA_PATH.joinpath("commands.json"))
+        levels: list = load_json(DATA_PATH.joinpath("levels.json"))
+        characters: list = load_json(DATA_PATH.joinpath("characters.json"))
+        hero: dict = load_json(hero_file)
+        spells: list = load_json(DATA_PATH.joinpath("spells.json"))
 
         # Items
-        armors = file.load_json(DATA_PATH.joinpath("armors.json"))
-        shields = file.load_json(DATA_PATH.joinpath("shields.json"))
-        weapons = file.load_json(DATA_PATH.joinpath("weapons.json"))
-        items = file.load_json(DATA_PATH.joinpath("items.json"))
+        armors = load_json(DATA_PATH.joinpath("armors.json"))
+        shields = load_json(DATA_PATH.joinpath("shields.json"))
+        weapons = load_json(DATA_PATH.joinpath("weapons.json"))
+        items = load_json(DATA_PATH.joinpath("items.json"))
 
         # Map
-        enemies: list = file.load_json(DATA_PATH.joinpath("enemies.json"))
-        locations: list = file.load_json(DATA_PATH.joinpath("locations.json"))
-        terrains: list = file.load_json(DATA_PATH.joinpath("terrains.json"))
+        enemies: list = load_json(DATA_PATH.joinpath("enemies.json"))
+        locations: list = load_json(DATA_PATH.joinpath("locations.json"))
+        terrains: list = load_json(DATA_PATH.joinpath("terrains.json"))
 
         # Gameplay
         mode: str = "walkabout"
 
-        fighting_commands = logic.get(commands, "mode", "fighting")
-        walkabout_commands = logic.get(commands, "mode", "walkabout")
+        fighting_commands = get(commands, "mode", "fighting")
+        walkabout_commands = get(commands, "mode", "walkabout")
         enemy = enemies[0]
 
         while True:
             if mode == "fighting":
-                cli.print_commands(fighting_commands)
+                print_commands(fighting_commands)
 
             else:
-                cli.print_commands(walkabout_commands)
+                print_commands(walkabout_commands)
 
             print("Command?")
             string = input().lower()
 
             if string == "t":
-                command.print_status(hero)
+                print_status(hero)
 
             elif mode == "walkabout":
                 if string == "f":
-                    enemy, mode = command.approach(enemies, hero)
+                    enemy, mode = approach(enemies, hero)
 
                 elif string == "s":
                     print("Spell")
@@ -87,17 +92,17 @@ def main() -> None:
                     print("Sell")
 
                 elif string == "l":
-                    command.sleep(hero)
+                    sleep(hero)
 
                 elif string == "a":
-                    command.save(hero, hero_file)
+                    save(hero, hero_file)
 
                 elif string == "r":
-                    command.rest()
+                    rest()
 
             else:
                 if string == "f":
-                    mode = command.fight(hero, enemy, levels)
+                    mode = fight(hero, enemy, levels)
 
                 elif string == "s":
                     print("Spell")
@@ -106,7 +111,7 @@ def main() -> None:
                     print("Item")
 
                 elif string == "r":
-                    mode = command.run(hero)
+                    mode = run(hero)
 
 
 if __name__ == "__main__":
