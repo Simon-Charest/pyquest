@@ -17,7 +17,8 @@ from constant import *
 
 WIDTH: int = 800
 HEIGHT: int = 600
-SPEED: int = 3
+STEP: int = 1
+MILLISECONDS: int = 1
 WHITE: tuple[int, int, int] = (255, 255, 255)
 KEYS: dict[str, list[int]] = {
     "quit": [K_ESCAPE],
@@ -80,24 +81,38 @@ def run_game() -> None:
         # Determine potential movement
         new_rect: Rect = character_rect.copy()
 
-        if any(keys[code] for code in KEYS.get("quit", [])):
-            running = False
-
+        # Check for each movement direction separately
         if any(keys[code] for code in KEYS.get("left", [])):
-            new_rect.x -= SPEED
+            new_rect.x -= STEP
+
+            if not is_colliding(new_rect, obstacles):
+                character_rect.x -= STEP
+
+            new_rect.x += STEP  # Reset to original position after checking
 
         if any(keys[code] for code in KEYS.get("right", [])):
-            new_rect.x += SPEED
+            new_rect.x += STEP
+
+            if not is_colliding(new_rect, obstacles):
+                character_rect.x += STEP
+
+            new_rect.x -= STEP  # Reset to original position after checking
 
         if any(keys[code] for code in KEYS.get("up", [])):
-            new_rect.y -= SPEED
-            
-        if any(keys[code] for code in KEYS.get("down", [])):
-            new_rect.y += SPEED
+            new_rect.y -= STEP
 
-        # Check for collisions and update character position if no collision
-        if not is_colliding(new_rect, obstacles):
-            character_rect = new_rect
+            if not is_colliding(new_rect, obstacles):
+                character_rect.y -= STEP
+
+            new_rect.y += STEP  # Reset to original position after checking
+
+        if any(keys[code] for code in KEYS.get("down", [])):
+            new_rect.y += STEP
+
+            if not is_colliding(new_rect, obstacles):
+                character_rect.y += STEP
+
+            new_rect.y -= STEP  # Reset to original position after checking
 
         # Ensure character stays within the map boundaries
         character_rect.x = max(0, min(map_image.get_width() - character_rect.width, character_rect.x))
@@ -106,7 +121,7 @@ def run_game() -> None:
         # Update camera position based on character's position
         camera_x: int
         camera_y: int
-        camera_x, camera_y = camera.update()
+        camera_x, camera_y = camera.update(character_rect)
 
         # Check if any arrow key is held down
         if any(keys[key] for key in [key for keys in KEYS.values() for key in keys]):
@@ -119,13 +134,13 @@ def run_game() -> None:
                 last_sprite_change = current_time
 
         # Render everything onto the screen
-        screen.fill(WHITE)
+        #screen.fill(WHITE)
         screen.blit(map_image, (-camera_x, -camera_y))  # Draw the map with camera offset
         screen.blit(character_images[sprite_index], (character_rect.x - camera_x, character_rect.y - camera_y))  # Draw the character with camera offset
         flip()
 
         # Add a slight delay to control frame rate
-        delay(10)
+        delay(MILLISECONDS)
 
     pygame_quit()
     sys_exit()
@@ -167,11 +182,14 @@ def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[R
     return obstacles
 
 
-def is_colliding(obj: Rect, obstacles: list[Rect]) -> bool:
+def is_colliding(obj: Rect, obstacles: list[Rect], margin: int = 0) -> bool:
     obstacle: Rect
 
+    # Shrink the object's rect by a small margin to create some space around it
+    shrunk_object: Rect = obj.inflate(-margin, -margin)
+    
     for obstacle in obstacles:
-        if obj.colliderect(obstacle):
+        if shrunk_object.colliderect(obstacle):
             return True
         
     return False
