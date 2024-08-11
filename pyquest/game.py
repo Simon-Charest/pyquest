@@ -26,6 +26,7 @@ KEYS: dict[str, list[int]] = {
     "up": [K_UP, K_w],
     "down": [K_DOWN, K_s]
 }
+MARGIN: int = 32
 
 
 def run_game() -> None:
@@ -79,6 +80,9 @@ def run_game() -> None:
 
         # Determine potential movement
         new_rect: Rect = character_rect.copy()
+
+        if any(keys[code] for code in KEYS.get("quit", [])):
+            break
 
         # Check for each movement direction separately
         if any(keys[code] for code in KEYS.get("left", [])):
@@ -180,7 +184,7 @@ def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[R
     return obstacles
 
 
-def is_colliding(obj: Rect, obstacles: list[Rect], margin: int = 2) -> bool:
+def is_colliding(obj: Rect, obstacles: list[Rect], margin: int = MARGIN) -> bool:
     obstacle: Rect
 
     # Shrink the object's rect by a small margin to create some space around it
