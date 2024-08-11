@@ -39,6 +39,15 @@ def run_game() -> None:
     # Load the map image
     map_image: Surface = load(DATA_PATH.joinpath("map.png")).convert()
 
+    # Load the collidable tile images
+    collidable_tiles: list[Surface] = [
+        load(DATA_PATH.joinpath("mountain.png")).convert_alpha(),
+        load(DATA_PATH.joinpath("water.png")).convert_alpha()
+    ]
+
+    # Get the positions of the collidable tiles
+    collidable_positions: list = load_collidable_positions(map_image, collidable_tiles)
+
     # Load the character sprite
     character_images: list[Surface] = [
         load(DATA_PATH.joinpath("alef1.png")).convert_alpha(),
@@ -74,24 +83,36 @@ def run_game() -> None:
         # Character movement controls
         keys: ScancodeWrapper = get_pressed()
 
+        # Determine potential movement
+        new_rect: Rect = character_rect.copy()
+
         if any(keys[code] for code in KEYS.get("quit", [])):
             running = False
 
         if any(keys[code] for code in KEYS.get("left", [])):
-            character_rect.x -= SPEED
+            new_rect.x -= SPEED
 
         if any(keys[code] for code in KEYS.get("right", [])):
-            character_rect.x += SPEED
+            new_rect.x += SPEED
 
         if any(keys[code] for code in KEYS.get("up", [])):
-            character_rect.y -= SPEED
+            new_rect.y -= SPEED
             
         if any(keys[code] for code in KEYS.get("down", [])):
-            character_rect.y += SPEED
+            new_rect.y += SPEED
 
-        # Ensure character stays within the screen boundaries
+        # Check for collisions and update character position if no collision
+        if not check_collision(new_rect, collidable_positions):
+            character_rect = new_rect
+
+        # Ensure character stays within the map boundaries
         character_rect.x = max(0, min(map_image.get_width() - character_rect.width, character_rect.x))
         character_rect.y = max(0, min(map_image.get_height() - character_rect.height, character_rect.y))
+
+        # Update camera position based on character's position
+        camera_x: int
+        camera_y: int
+        camera_x, camera_y = camera.update()
 
         # Check if any arrow key is held down
         if any(keys[key] for key in [key for keys in KEYS.values() for key in keys]):
@@ -102,11 +123,6 @@ def run_game() -> None:
                 # Switch the sprite
                 sprite_index = (sprite_index + 1) % len(character_images)
                 last_sprite_change = current_time
-
-        # Update camera position
-        camera_x: int
-        camera_y: int
-        camera_x, camera_y = camera.update()
 
         # Render everything onto the screen
         screen.fill(WHITE)
@@ -119,3 +135,39 @@ def run_game() -> None:
 
     pygame_quit()
     sys_exit()
+
+
+def load_collidable_positions(map_image: Surface, collidable_tiles: list[Surface]) -> list[Rect]:
+    collidable_positions: list[Surface] = []
+    tile: Surface
+
+    for tile in collidable_tiles:
+        # Get the size of the tile
+        tile_width: int
+        tile_height: int
+        tile_width, tile_height = tile.get_size()
+
+        # Loop through the map image to find positions of the collidable tiles
+        x: int
+        
+        for x in range(0, map_image.get_width(), tile_width):
+            y: int
+
+            for y in range(0, map_image.get_height(), tile_height):
+                # Create a sub-surface of the current tile in the map image
+                sub_surface: Surface = map_image.subsurface((x, y, tile_width, tile_height))
+                
+                if sub_surface.get_at((0, 0)) == tile.get_at((0, 0)):  # Check if tile matches
+                    collidable_positions.append(Rect(x, y, tile_width, tile_height))
+    
+    return collidable_positions
+
+
+def check_collision(rect: Rect, collidable_positions: list[Rect]) -> bool:
+    pos: Rect
+
+    for pos in collidable_positions:
+        if rect.colliderect(pos):
+            return True
+        
+    return False
