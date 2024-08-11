@@ -19,7 +19,6 @@ WIDTH: int = 800
 HEIGHT: int = 600
 STEP: int = 1
 MILLISECONDS: int = 1
-WHITE: tuple[int, int, int] = (255, 255, 255)
 KEYS: dict[str, list[int]] = {
     "quit": [K_ESCAPE],
     "left": [K_LEFT, K_a],
@@ -134,7 +133,6 @@ def run_game() -> None:
                 last_sprite_change = current_time
 
         # Render everything onto the screen
-        #screen.fill(WHITE)
         screen.blit(map_image, (-camera_x, -camera_y))  # Draw the map with camera offset
         screen.blit(character_images[sprite_index], (character_rect.x - camera_x, character_rect.y - camera_y))  # Draw the character with camera offset
         flip()
@@ -182,7 +180,7 @@ def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[R
     return obstacles
 
 
-def is_colliding(obj: Rect, obstacles: list[Rect], margin: int = 0) -> bool:
+def is_colliding(obj: Rect, obstacles: list[Rect], margin: int = 2) -> bool:
     obstacle: Rect
 
     # Shrink the object's rect by a small margin to create some space around it
