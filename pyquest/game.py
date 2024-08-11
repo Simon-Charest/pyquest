@@ -1,25 +1,40 @@
-from pygame import K_DOWN, K_LEFT, K_RIGHT, K_UP, K_a, K_d, K_s, K_w, QUIT, Rect, Surface, init, quit as pygame_quit
+"""
+Usage:
+python pyquest --map
+"""
+
+from pygame import K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, K_a, K_d, K_s, K_w, QUIT, Rect, Surface, init, quit as pygame_quit
 from pygame.display import flip, set_caption, set_mode
-from pygame.event import get
+from pygame.event import Event, get
 from pygame.image import load
 from pygame.key import ScancodeWrapper, get_pressed
-from pygame.event import Event
 from pygame.time import delay, get_ticks
 from sys import exit as sys_exit
 
 # Pyquest
-from constant import *
 from camera import Camera
+from constant import *
+
+WIDTH: int = 800
+HEIGHT: int = 600
+SPEED: int = 3
+WHITE: tuple[int, int, int] = (255, 255, 255)
+KEYS: dict[str, list[int]] = {
+    "quit": [K_ESCAPE],
+    "left": [K_LEFT, K_a],
+    "right": [K_RIGHT, K_d],
+    "up": [K_UP, K_w],
+    "down": [K_DOWN, K_s]
+}
+
 
 def run_game() -> None:
     # Initialize Pygame
     init()
 
     # Set up the display
-    WIDTH: int = 800
-    HEIGHT: int = 600
-    screen: Surface = set_mode((WIDTH, HEIGHT))
     set_caption("Dragon Quest")
+    screen: Surface = set_mode((WIDTH, HEIGHT))
 
     # Load the map image
     map_image: Surface = load(DATA_PATH.joinpath("map.png")).convert()
@@ -29,63 +44,68 @@ def run_game() -> None:
         load(DATA_PATH.joinpath("alef1.png")).convert_alpha(),
         load(DATA_PATH.joinpath("alef2.png")).convert_alpha()
     ]
+    
+    # Starting position of the character
     character_rect: Rect = character_images[0].get_rect()
-    character_rect.center = (WIDTH // 2, HEIGHT // 2)  # Starting position of the character
-
-    # Define some colors
-    WHITE: tuple[int, int, int] = (255, 255, 255)
-
-    # Main game loop
-    running: bool = True
-
+    character_rect.center = (
+        map_image.get_width() // 2 - 16 * character_images[0].get_width() - character_images[0].get_width() // 2,
+        map_image.get_height() // 2 - 16 * character_images[0].get_height() - character_images[0].get_height() // 2
+    )
+    
     # Camera setup
     camera: Camera = Camera(character_rect, map_image.get_width(), map_image.get_height(), WIDTH, HEIGHT)
 
     # Character animation variables
+    sprite_change_interval: int = 200  # milliseconds
     sprite_index: int = 0
     last_sprite_change: int = get_ticks()
-    sprite_change_interval: int = 200  # milliseconds
-    event: Event
-    keys: ScancodeWrapper
-    current_time: int
-    camera_x: int
-    camera_y: int
+    
+    # Main game loop
+    running: bool = True
 
     while running:
         # Event handling
+        event: Event
+
         for event in get():
             if event.type == QUIT:
                 running = False
 
         # Character movement controls
-        keys = get_pressed()
+        keys: ScancodeWrapper = get_pressed()
 
-        if keys[K_LEFT] or keys[K_a]:
-            character_rect.x -= 5
+        if any(keys[code] for code in KEYS.get("quit", [])):
+            running = False
 
-        if keys[K_RIGHT] or keys[K_d]:
-            character_rect.x += 5
+        if any(keys[code] for code in KEYS.get("left", [])):
+            character_rect.x -= SPEED
 
-        if keys[K_UP] or keys[K_w]:
-            character_rect.y -= 5
+        if any(keys[code] for code in KEYS.get("right", [])):
+            character_rect.x += SPEED
+
+        if any(keys[code] for code in KEYS.get("up", [])):
+            character_rect.y -= SPEED
             
-        if keys[K_DOWN] or keys[K_s]:
-            character_rect.y += 5
+        if any(keys[code] for code in KEYS.get("down", [])):
+            character_rect.y += SPEED
 
         # Ensure character stays within the screen boundaries
-        character_rect.x = max(0, min(WIDTH - character_rect.width, character_rect.x))
-        character_rect.y = max(0, min(HEIGHT - character_rect.height, character_rect.y))
+        character_rect.x = max(0, min(map_image.get_width() - character_rect.width, character_rect.x))
+        character_rect.y = max(0, min(map_image.get_height() - character_rect.height, character_rect.y))
 
         # Check if any arrow key is held down
-        if any(keys[key] for key in [K_LEFT, K_RIGHT, K_UP, K_DOWN]):
+        if any(keys[key] for key in [key for keys in KEYS.values() for key in keys]):
             # Check if it's time to change the character sprite
-            current_time = get_ticks()
+            current_time: int = get_ticks()
+
             if current_time - last_sprite_change >= sprite_change_interval:
                 # Switch the sprite
                 sprite_index = (sprite_index + 1) % len(character_images)
                 last_sprite_change = current_time
 
         # Update camera position
+        camera_x: int
+        camera_y: int
         camera_x, camera_y = camera.update()
 
         # Render everything onto the screen

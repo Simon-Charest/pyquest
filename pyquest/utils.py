@@ -1,6 +1,6 @@
-from glob import glob
 from cv2 import imread, imwrite
 from cv2.typing import MatLike
+from glob import glob
 from numpy import uint8, zeros
 
 # Pyquest
