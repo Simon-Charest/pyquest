@@ -39,20 +39,14 @@ def run_game() -> None:
     # Load the map image
     map_image: Surface = load(DATA_PATH.joinpath("map.png")).convert()
 
-    # Load the collidable tile images
-    collidable_tiles: list[Surface] = [
-        load(DATA_PATH.joinpath("mountain.png")).convert_alpha(),
-        load(DATA_PATH.joinpath("water.png")).convert_alpha()
-    ]
+    # Load the obstacle images
+    obstacle_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath, ["mountain.png", "wall.png", "water.png"]))
 
     # Get the positions of the collidable tiles
-    collidable_positions: list = load_collidable_positions(map_image, collidable_tiles)
+    obstacles: list[Rect] = load_obstacles(map_image, obstacle_images)
 
     # Load the character sprite
-    character_images: list[Surface] = [
-        load(DATA_PATH.joinpath("alef1.png")).convert_alpha(),
-        load(DATA_PATH.joinpath("alef2.png")).convert_alpha()
-    ]
+    character_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath, ["alef1.png", "alef2.png"]))
     
     # Starting position of the character
     character_rect: Rect = character_images[0].get_rect()
@@ -102,7 +96,7 @@ def run_game() -> None:
             new_rect.y += SPEED
 
         # Check for collisions and update character position if no collision
-        if not check_collision(new_rect, collidable_positions):
+        if not is_colliding(new_rect, obstacles):
             character_rect = new_rect
 
         # Ensure character stays within the map boundaries
@@ -137,37 +131,47 @@ def run_game() -> None:
     sys_exit()
 
 
-def load_collidable_positions(map_image: Surface, collidable_tiles: list[Surface]) -> list[Rect]:
-    collidable_positions: list[Surface] = []
-    tile: Surface
+def load_surfaces(images: list[Path]) -> list[Surface]:
+    image: Path
+    surfaces: list[Surface] = []
+    
+    for image in images:
+        surfaces.append(load(image).convert_alpha())
 
-    for tile in collidable_tiles:
+    return surfaces
+
+
+def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[Rect]:
+    obstacle_image: Surface
+    obstacles: list[Rect] = []
+
+    for obstacle_image in obstacle_images:
         # Get the size of the tile
-        tile_width: int
-        tile_height: int
-        tile_width, tile_height = tile.get_size()
+        obstacle_width: int
+        obstacle_height: int
+        obstacle_width, obstacle_height = obstacle_image.get_size()
 
         # Loop through the map image to find positions of the collidable tiles
         x: int
         
-        for x in range(0, map_image.get_width(), tile_width):
+        for x in range(0, map_image.get_width(), obstacle_width):
             y: int
 
-            for y in range(0, map_image.get_height(), tile_height):
+            for y in range(0, map_image.get_height(), obstacle_height):
                 # Create a sub-surface of the current tile in the map image
-                sub_surface: Surface = map_image.subsurface((x, y, tile_width, tile_height))
+                sub_surface: Surface = map_image.subsurface((x, y, obstacle_width, obstacle_height))
                 
-                if sub_surface.get_at((0, 0)) == tile.get_at((0, 0)):  # Check if tile matches
-                    collidable_positions.append(Rect(x, y, tile_width, tile_height))
+                if sub_surface.get_at((0, 0)) == obstacle_image.get_at((0, 0)):  # Check if tile matches
+                    obstacles.append(Rect(x, y, obstacle_width, obstacle_height))
     
-    return collidable_positions
+    return obstacles
 
 
-def check_collision(rect: Rect, collidable_positions: list[Rect]) -> bool:
-    pos: Rect
+def is_colliding(obj: Rect, obstacles: list[Rect]) -> bool:
+    obstacle: Rect
 
-    for pos in collidable_positions:
-        if rect.colliderect(pos):
+    for obstacle in obstacles:
+        if obj.colliderect(obstacle):
             return True
         
     return False
