@@ -10,9 +10,9 @@ try: from pyquest.constant import *
 except: pass
 
 
-def read_map(filename: Path) -> str:
+def read_map(filename: Path, tile_pathname: Path) -> str:
     map: MatLike = imread(str(filename))
-    tiles: dict[str, MatLike] = read_tiles(DATA_PATH.joinpath("*.png"))
+    tiles: dict[str, MatLike] = read_tiles(tile_pathname)
     y: int
     x: int
     tile: ndarray
@@ -157,15 +157,20 @@ def read_tiles(pathname: Path) -> dict[str, MatLike]:
     return tiles
 
 
-def write_map(map_string: str, filename: Path):
+def write_map(map_string: str, out_filename: Path, tile_pathname: Path):
     rows: list[str] = map_string.split("\n")[:-1]
     width: int = TILE_SIZE * len(rows[0])
     height: int = TILE_SIZE * len(rows)
+    y: int
+    row: str
+    tiles: dict[str, MatLike] = read_tiles(tile_pathname)
     channels: int = 3
     map_image: ndarray = zeros((height, width, channels))
-    tiles: dict[str, MatLike] = read_tiles(DATA_PATH.joinpath("*.png"))
 
     for y, row in enumerate(rows):
+        x: int
+        tile_char: str
+
         for x, tile_char in enumerate(row):
             if tile_char == "C":
                 map_image[y * TILE_SIZE : (y + 1) * TILE_SIZE, x * TILE_SIZE : (x + 1) * TILE_SIZE] = tiles["castle"]
@@ -206,7 +211,10 @@ def write_map(map_string: str, filename: Path):
             elif tile_char == "S":
                 map_image[y * TILE_SIZE : (y + 1) * TILE_SIZE, x * TILE_SIZE : (x + 1) * TILE_SIZE] = tiles["swamp"]
 
-    imwrite(str(filename.parent.joinpath("out.png")), map_image)
+            else:
+                print("test")
+
+    imwrite(str(out_filename), map_image)
 
 
 def replace_image(original_path: Path, old_path: Path, new_path: Path) -> None:

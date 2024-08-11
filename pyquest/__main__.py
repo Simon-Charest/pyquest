@@ -13,23 +13,23 @@ from logic import *
 
 def main() -> None:
     argument_parser: ArgumentParser = ArgumentParser("Pyquest: A Dragon Quest (Famicom) / Warrior (NES) clone.")
-    argument_parser.add_argument("--map", "-m", action="store_true", help="load map")
     argument_parser.add_argument("--map_c2b", "-b", action="store_true", help="convert map from characters to bitmap")
     argument_parser.add_argument("--map_b2c", "-c", action="store_true", help="convert map from bitmap to characters")
+    argument_parser.add_argument("--map", "-m", action="store_true", help="load map")
     argument_parser.add_argument("--zelda", "-z", action="store_true", help="load The Legend of Zelda map")
     argument_parser.add_argument("--game", "-g", action="store_true", help="start game")
     arguments: Namespace = argument_parser.parse_args()
 
-    if arguments.map:
-        run_game()
-
     if arguments.map_c2b:
         map: str = open(DATA_PATH.joinpath("map.txt")).read()
-        write_map(map, DATA_PATH.joinpath("map.png"))
+        write_map(map, DATA_PATH.joinpath("out.png"), DATA_PATH.joinpath("tile/*.png"))
 
     if arguments.map_b2c:
-        map: str = read_map(DATA_PATH.joinpath("map.png"))
+        map: str = read_map(DATA_PATH.joinpath("map.png"), DATA_PATH.joinpath("tile/*.png"))
         open(DATA_PATH.joinpath("map.txt"), "w").write(map)
+
+    if arguments.map:
+        run_game()
 
     if arguments.zelda:
         map: str = read_zelda_map(DATA_PATH.joinpath("zelda1.png"))

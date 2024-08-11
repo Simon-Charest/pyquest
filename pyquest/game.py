@@ -1,6 +1,6 @@
 """
 Usage:
-python pyquest --map
+python pyquest [-b] -m
 """
 
 from pygame import K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, K_a, K_d, K_s, K_w, QUIT, Rect, Surface, init, quit as pygame_quit
@@ -17,8 +17,8 @@ from constant import *
 
 WIDTH: int = 800
 HEIGHT: int = 600
-STEP: int = 1
-MILLISECONDS: int = 1
+STEP: int = 1  # Default: 1
+MILLISECONDS: int = 0  # Default: 5
 KEYS: dict[str, list[int]] = {
     "quit": [K_ESCAPE],
     "left": [K_LEFT, K_a],
@@ -26,7 +26,7 @@ KEYS: dict[str, list[int]] = {
     "up": [K_UP, K_w],
     "down": [K_DOWN, K_s]
 }
-MARGIN: int = 32
+MARGIN: int = 2  # Default: 0
 
 
 def run_game() -> None:
@@ -41,7 +41,7 @@ def run_game() -> None:
     map_image: Surface = load(DATA_PATH.joinpath("map.png")).convert()
 
     # Load the obstacle images
-    obstacle_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath, ["mountain.png", "wall.png", "water.png"]))
+    obstacle_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath("tile").joinpath, ["mountain.png", "wall.png", "water.png"]))
 
     # Get the positions of the collidable tiles
     obstacles: list[Rect] = load_obstacles(map_image, obstacle_images)
