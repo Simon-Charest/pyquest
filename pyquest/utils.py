@@ -157,7 +157,7 @@ def read_tiles(pathname: Path) -> dict[str, MatLike]:
     return tiles
 
 
-def write_map(map_string: str, out_filename: Path, tile_pathname: Path):
+def write_map(map_string: str, tile_pathname: Path, out_filename: Path):
     rows: list[str] = map_string.split("\n")[:-1]
     width: int = TILE_SIZE * len(rows[0])
     height: int = TILE_SIZE * len(rows)
@@ -210,9 +210,6 @@ def write_map(map_string: str, out_filename: Path, tile_pathname: Path):
 
             elif tile_char == "S":
                 map_image[y * TILE_SIZE : (y + 1) * TILE_SIZE, x * TILE_SIZE : (x + 1) * TILE_SIZE] = tiles["swamp"]
-
-            else:
-                print("test")
 
     imwrite(str(out_filename), map_image)
 

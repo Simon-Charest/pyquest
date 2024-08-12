@@ -21,12 +21,12 @@ def main() -> None:
     arguments: Namespace = argument_parser.parse_args()
 
     if arguments.map_c2b:
-        map: str = open(DATA_PATH.joinpath("map.txt")).read()
-        write_map(map, DATA_PATH.joinpath("out.png"), DATA_PATH.joinpath("tile/*.png"))
+        map_string: str = open(DATA_PATH.joinpath("map.txt")).read()
+        write_map(map_string, DATA_PATH.joinpath("out.png"), DATA_PATH.joinpath("tile/*.png"))
 
     if arguments.map_b2c:
-        map: str = read_map(DATA_PATH.joinpath("map.png"), DATA_PATH.joinpath("tile/*.png"))
-        open(DATA_PATH.joinpath("map.txt"), "w").write(map)
+        map_string: str = read_map(DATA_PATH.joinpath("map.png"), DATA_PATH.joinpath("tile/*.png"))
+        open(DATA_PATH.joinpath("map.txt"), "w").write(map_string)
 
     if arguments.map:
         run_game()

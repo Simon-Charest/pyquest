@@ -1,8 +1,10 @@
 """
 Usage:
-python pyquest [-b] -m
+python pyquest [-c] -m
+TODO: Fix collision detection with bridges.
 """
 
+from pathlib import Path
 from pygame import K_DOWN, K_ESCAPE, K_LEFT, K_RIGHT, K_UP, K_a, K_d, K_s, K_w, QUIT, Rect, Surface, init, quit as pygame_quit
 from pygame.display import flip, set_caption, set_mode
 from pygame.event import Event, get
@@ -12,8 +14,8 @@ from pygame.time import delay, get_ticks
 from sys import exit as sys_exit
 
 # Pyquest
+from utils import write_map
 from camera import Camera
-from constant import *
 
 WIDTH: int = 800
 HEIGHT: int = 600
@@ -27,7 +29,13 @@ KEYS: dict[str, list[int]] = {
     "down": [K_DOWN, K_s]
 }
 MARGIN: int = 2  # Default: 0
-
+DATA: Path = Path(__file__).parent.joinpath("data")
+STRING_MAP: Path = DATA.joinpath("map.txt")
+IMAGE_MAP: Path = DATA.joinpath("map.png")
+TILE: Path = DATA.joinpath("tile")
+TILES: Path = TILE.joinpath("*.png")
+OBSTACLES: list[Path] = list(map(TILE.joinpath, ["mountain.png", "wall.png", "water.png"]))
+CHARACTER: list[Path] = list(map(DATA.joinpath, ["alef1.png", "alef2.png"]))
 
 def run_game() -> None:
     # Initialize Pygame
@@ -37,27 +45,30 @@ def run_game() -> None:
     set_caption("Dragon Quest")
     screen: Surface = set_mode((WIDTH, HEIGHT))
 
+    # Convert map from characters to bitmap
+    string_map: str = open(STRING_MAP).read()
+    write_map(string_map, TILES, IMAGE_MAP)
+
     # Load the map image
-    map_image: Surface = load(DATA_PATH.joinpath("map.png")).convert()
+    surface_map: Surface = load(IMAGE_MAP).convert()
 
-    # Load the obstacle images
-    obstacle_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath("tile").joinpath, ["mountain.png", "wall.png", "water.png"]))
-
+    obstacle_images: list[Surface] = load_surfaces(OBSTACLES)
+    
     # Get the positions of the collidable tiles
-    obstacles: list[Rect] = load_obstacles(map_image, obstacle_images)
+    obstacles: list[Rect] = load_obstacles(surface_map, obstacle_images)
 
     # Load the character sprite
-    character_images: list[Surface] = load_surfaces(map(DATA_PATH.joinpath, ["alef1.png", "alef2.png"]))
+    character_images: list[Surface] = load_surfaces(CHARACTER)
     
     # Starting position of the character
     character_rect: Rect = character_images[0].get_rect()
     character_rect.center = (
-        map_image.get_width() // 2 - 16 * character_images[0].get_width() - character_images[0].get_width() // 2,
-        map_image.get_height() // 2 - 16 * character_images[0].get_height() - character_images[0].get_height() // 2
+        surface_map.get_width() // 2 - 16 * character_images[0].get_width() - character_images[0].get_width() // 2,
+        surface_map.get_height() // 2 - 16 * character_images[0].get_height() - character_images[0].get_height() // 2
     )
     
     # Camera setup
-    camera: Camera = Camera(character_rect, map_image.get_width(), map_image.get_height(), WIDTH, HEIGHT)
+    camera: Camera = Camera(character_rect, surface_map.get_width(), surface_map.get_height(), WIDTH, HEIGHT)
 
     # Character animation variables
     sprite_change_interval: int = 200  # milliseconds
@@ -118,8 +129,8 @@ def run_game() -> None:
             new_rect.y -= STEP  # Reset to original position after checking
 
         # Ensure character stays within the map boundaries
-        character_rect.x = max(0, min(map_image.get_width() - character_rect.width, character_rect.x))
-        character_rect.y = max(0, min(map_image.get_height() - character_rect.height, character_rect.y))
+        character_rect.x = max(0, min(surface_map.get_width() - character_rect.width, character_rect.x))
+        character_rect.y = max(0, min(surface_map.get_height() - character_rect.height, character_rect.y))
 
         # Update camera position based on character's position
         camera_x: int
@@ -137,7 +148,7 @@ def run_game() -> None:
                 last_sprite_change = current_time
 
         # Render everything onto the screen
-        screen.blit(map_image, (-camera_x, -camera_y))  # Draw the map with camera offset
+        screen.blit(surface_map, (-camera_x, -camera_y))  # Draw the map with camera offset
         screen.blit(character_images[sprite_index], (character_rect.x - camera_x, character_rect.y - camera_y))  # Draw the character with camera offset
         flip()
 
