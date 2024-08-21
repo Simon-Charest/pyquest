@@ -2,3 +2,4 @@ opencv-python
 pygame
 PyQt6
 pytest
+pywin32

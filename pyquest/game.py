@@ -1,6 +1,6 @@
 """
 Usage:
-python pyquest [-c] -m
+python pyquest -m
 TODO: Fix collision detection with bridges.
 """
 
