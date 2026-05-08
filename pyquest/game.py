@@ -19,7 +19,7 @@ from camera import Camera
 WIDTH: int = 800
 HEIGHT: int = 600
 STEP: int = 1  # Default: 1
-MILLISECONDS: int = 0  # Default: 5
+MILLISECONDS: int = 5  # Default: 5
 KEYS: dict[str, list[int]] = {
     "quit": [K_ESCAPE],
     "left": [K_LEFT, K_a],
