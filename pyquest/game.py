@@ -1,7 +1,6 @@
 """
 Usage:
 python pyquest -m
-TODO: Fix collision detection with bridges.
 """
 
 from pathlib import Path
@@ -54,8 +53,8 @@ def run_game() -> None:
 
     obstacle_images: list[Surface] = load_surfaces(OBSTACLES)
     
-    # Get the positions of the collidable tiles
-    obstacles: list[Rect] = load_obstacles(surface_map, obstacle_images)
+    # Get the positions of the collidable tiles (pass string_map to skip bridges)
+    obstacles: list[Rect] = load_obstacles(surface_map, obstacle_images, string_map)
 
     # Load the character sprite
     character_images: list[Surface] = load_surfaces(CHARACTER)
@@ -169,9 +168,18 @@ def load_surfaces(images: list[Path]) -> list[Surface]:
     return surfaces
 
 
-def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[Rect]:
+def load_obstacles(map_image: Surface, obstacle_images: list[Surface], string_map: str = "") -> list[Rect]:
     obstacle_image: Surface
     obstacles: list[Rect] = []
+    
+    # Parse bridge positions from the map string
+    bridge_positions: set[tuple[int, int]] = set()
+    if string_map:
+        rows: list[str] = string_map.strip().split("\n")
+        for row_idx, row in enumerate(rows):
+            for col_idx, char in enumerate(row):
+                if char == "B":  # Bridge tile
+                    bridge_positions.add((col_idx, row_idx))
 
     for obstacle_image in obstacle_images:
         # Get the size of the tile
@@ -186,6 +194,14 @@ def load_obstacles(map_image: Surface, obstacle_images: list[Surface]) -> list[R
             y: int
 
             for y in range(0, map_image.get_height(), obstacle_height):
+                # Convert pixel position to tile grid position
+                tile_x: int = x // obstacle_width
+                tile_y: int = y // obstacle_height
+                
+                # Skip if this is a bridge position
+                if (tile_x, tile_y) in bridge_positions:
+                    continue
+                
                 # Create a sub-surface of the current tile in the map image
                 sub_surface: Surface = map_image.subsurface((x, y, obstacle_width, obstacle_height))
                 
