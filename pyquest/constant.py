@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 __author__: str = "Simon Charest"
-__copyright__: str = "© 2019-2024 SLCIT Inc. All rights reserved."
+__copyright__: str = "© 2019-2026 SLCIT. All rights reserved."
 __credits__: str = [
     {"Programmer": "Koichi Nakamura"},
     {"Director": "Koichi Nakamura"},

@@ -9,10 +9,10 @@
     "mp_max": 0,
     "spells": null
   },
-  "hp": 18,
+  "hp": 22,
   "mp": 0,
-  "gp": 18,
-  "xp": 19,
+  "gp": 0,
+  "xp": 20,
   "weapon": {
     "name": "Club",
     "atk": 4,

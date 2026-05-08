@@ -60,6 +60,28 @@ python pyquest -h
 pytest
 ```
 
+## Features
+
+### Random Encounter System
+The game now includes a random encounter system that triggers battles while exploring the world map:
+
+- **Encounter Timer**: Encounters occur approximately every 10 steps with a 2% chance per encounter check
+- **Combat Interface**: When an encounter happens, the game switches to a combat overlay showing:
+  - Enemy name and stats
+  - Hero HP and enemy HP
+  - Combat options (Fight/RUN)
+- **Combat Mechanics**:
+  - Press 'F' to fight - hero attacks with damage based on strength and weapon
+  - Press 'R' to attempt escape (50% success rate)
+  - Enemies counterattack after hero attacks
+  - Experience and gold rewards for defeating enemies
+  - Automatic level-ups when XP thresholds are reached
+- **Data Persistence**: Hero stats, XP, gold, and level progress are automatically saved
+
+### Game Modes
+- **Graphical Mode** (`python pyquest -m`): Full RPG experience with random encounters
+- **Text Mode** (`python pyquest -g`): Traditional text-based gameplay
+
 ## License
 - Distributed under the [MIT License](https://opensource.org/license/mit/). See [LICENSE.txt](./LICENSE.txt) for more information.
 
